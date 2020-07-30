@@ -23,17 +23,33 @@ public class ComnToast extends Toast{
     private String msg="";
     private static ComnToast _instance;
     private static boolean isShow = false;
+    
+    private int customView =0;
+    private int customViewDuration=Toast.LENGTH_SHORT;
+    private int customGravity = Gravity.CENTER;
+    private int xOffset=0;
+    private int intyOffsetl=0;
 
     public static void showMsg(String msg){
+        if (ComnUtil.isEmpty(msg)){
+           return;
+        }
         getInstance().setMsg(msg).show();
     }
 
     public static ComnToast getInstance(){
         if (null==_instance){
-            _instance=new ComnToast();
+            synchronized (ComnToast.class) {
+                _instance = new ComnToast();
+            }
         }
-        //重置初始样式(因为是单例的Toast,所以当用户自定义setView后,此Toast就永远是用户自定义setView的样式了)
-        _instance.setView(R.layout.base_view_toast);
+        return _instance;
+    }
+
+    public ComnToast(){
+        super(applicationContext);
+        customView= R.layout.comn_toast_default;
+        setView(customView);
         _instance.getView().addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
             public void onViewAttachedToWindow(View v) {
@@ -45,14 +61,8 @@ public class ComnToast extends Toast{
                 isShow = false;
             }
         });
-        return _instance;
-    }
-
-    public ComnToast(){
-        super(applicationContext);
-        setView(R.layout.base_view_toast);
-        setDuration(Toast.LENGTH_SHORT);
-        setGravity(Gravity.CENTER, 0, 0);
+        setDuration(customViewDuration);
+        setGravity(customGravity,xOffset,intyOffsetl);
     }
 
     //需要使用新的布局可以 setView(新布局资源ID).setMsg(新布局中控件ID,显示内容)
