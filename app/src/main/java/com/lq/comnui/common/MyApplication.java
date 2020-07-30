@@ -31,4 +31,5 @@ public final class MyApplication extends Application {
         // 使用 Dex分包
         //MultiDex.install(this);
     }
+    
 }
