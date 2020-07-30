@@ -8,7 +8,13 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
+import com.blankj.utilcode.util.DeviceUtils;
+import com.blankj.utilcode.util.ImageUtils;
+import com.blankj.utilcode.util.IntentUtils;
+import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.lq.comn.BaseDialog;
 import com.lq.comn.action.HandlerAction;
 import com.lq.comnui.dialog.AddressDialog;
@@ -34,6 +40,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
 
     AppCompatButton btn_dialog; //弹框
+    AppCompatButton btn_app; //App信息
+    AppCompatButton btn_device; //设备信息
+    AppCompatButton btn_screen; //屏幕
 
     CountdownView cv_test_countdown; //发送验证码
     AppCompatButton btn_bar; //状态栏
@@ -50,10 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_dialog = findViewById(R.id.btn_dialog);
         cv_test_countdown = findViewById(R.id.cv_test_countdown);
         btn_bar = findViewById(R.id.btn_bar);
+        btn_app = findViewById(R.id.btn_app);
+        btn_device = findViewById(R.id.btn_device);
+        btn_screen = findViewById(R.id.btn_screen);
 
         btn_dialog.setOnClickListener(this);
         cv_test_countdown.setOnClickListener(this);
         btn_bar.setOnClickListener(this);
+        btn_app.setOnClickListener(this);
+        btn_device.setOnClickListener(this);
+        btn_screen.setOnClickListener(this);
+
     }
 
     @Override
@@ -63,12 +79,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_bar: //状态栏
                 startActivity(new Intent(this,BarActivity.class));
                 break;
-            case R.id.btn_dialog:
-                // dialog
+            case R.id.btn_dialog: //弹框
                 startActivity(new Intent(this,DialogActivity.class));
                 break;
-            case R.id.cv_test_countdown:
-                // 发送验证码
+            case R.id.btn_app: //App
+                startActivity(new Intent(this,AppActivity.class));
+                break;
+            case R.id.btn_device: // 设备信息
+                startActivity(new Intent(this,DeviceActivity.class));
+                break;
+            case R.id.btn_screen: //屏幕
+                startActivity(new Intent(this,ScreenActivity.class));
+                break;
+            case R.id.cv_test_countdown: // 发送验证码
                 cv_test_countdown.start();
                 break;
         }

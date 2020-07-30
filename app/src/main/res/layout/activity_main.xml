@@ -33,6 +33,30 @@
             android:layout_marginTop="@dimen/dp_20"
             android:text="弹框" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_app"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="App信息" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_device"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设备信息" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_screen"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="屏幕" />
+
         <com.lq.comnui.widget.SettingBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
