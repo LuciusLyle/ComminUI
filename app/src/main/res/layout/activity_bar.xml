@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_20"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/BarHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_height"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取状态栏高度（px）" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_gone"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置状态栏是否可见" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置状态栏是否为浅色模式" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_add"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="增加状态栏高度" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_delete"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="减少状态栏高度" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_color"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置状态栏颜色" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_actionBar"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取ActionBar高度" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_tips"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置通知栏是否可见" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_navIs"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="判断是否支持导航栏" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_navHeight"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取导航栏高度" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_navLook"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置导航栏是否可见" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_navColor"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取导航栏颜色" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar_navSetColor"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="设置导航栏颜色" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

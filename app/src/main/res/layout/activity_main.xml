@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_20"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/LView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_bar"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="状态栏设置" />
+
+        <com.lq.comnui.widget.SettingBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:bar_leftText="左文本"
+            app:bar_rightText="右文本"
+            android:layout_marginTop="@dimen/dp_15"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.lq.comnui.widget.SwitchButton
+                android:id="@+id/sb_test_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:checked="true" />
+
+            <com.lq.comnui.widget.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:checked="false" />
+
+            <com.lq.comnui.widget.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:checked="true"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@drawable/selector_checkbox"
+                android:checked="true" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:button="@drawable/selector_checkbox" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@drawable/selector_checkbox"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@drawable/selector_radiobutton"
+                android:checked="true" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:button="@drawable/selector_radiobutton" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@drawable/selector_radiobutton"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.lq.widget.view.CountdownView
+                android:id="@+id/cv_test_countdown"
+                style="@style/CountdownViewStyle"/>
+
+            <com.lq.widget.view.CountdownView
+                style="@style/CountdownViewStyle"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <com.lq.widget.view.ClearEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="这是一个带清除的按钮的EditText"/>
+
+        <com.lq.widget.view.PasswordEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="78797078"/>
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:hint="这里只能输入手机号（只能以 1 开头）"
+            app:regexType="mobile" />
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="这里只能输入中文（普通的中文字符）"
+            app:regexType="chinese" />
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="这里只能输入英文（大写和小写的英文）"
+            app:regexType="english" />
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="这里只能输入数量（非 0 开头的数字）"
+            app:regexType="count" />
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="这里只能输入用户名（中文、英文、数字）"
+            app:regexType="name" />
+
+        <com.lq.widget.view.RegexEditText
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="这里只能输入非空格的字符"
+            app:regexType="nonnull" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_pop"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出Pop" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_message"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出消息对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_input"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出输入对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_menu"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出底部选择框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_center_menu"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出居中选择框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_single_select"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出单项选择框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_more_select"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出多项选择框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_succeed_toast"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出完成对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_fail_toast"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出错误对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_warn_toast"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出警告对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_wait"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出加载对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_pay"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出支付对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_address"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出地区对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_date"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出日期对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_time"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出时间对话框" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog_custom"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹出自定义对话框" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
