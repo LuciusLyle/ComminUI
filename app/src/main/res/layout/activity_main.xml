@@ -25,6 +25,14 @@
             android:layout_marginTop="@dimen/dp_20"
             android:text="状态栏设置" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dialog"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="弹框" />
+
         <com.lq.comnui.widget.SettingBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -200,134 +208,6 @@
             android:layout_height="wrap_content"
             android:hint="这里只能输入非空格的字符"
             app:regexType="nonnull" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_pop"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出Pop" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_message"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出消息对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_input"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出输入对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_menu"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出底部选择框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_center_menu"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出居中选择框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_single_select"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出单项选择框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_more_select"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出多项选择框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_succeed_toast"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出完成对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_fail_toast"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出错误对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_warn_toast"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出警告对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_wait"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出加载对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_pay"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出支付对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_address"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出地区对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_date"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出日期对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_time"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出时间对话框" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_dialog_custom"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="弹出自定义对话框" />
 
     </LinearLayout>
 
