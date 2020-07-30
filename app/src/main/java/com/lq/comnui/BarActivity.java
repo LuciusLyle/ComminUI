@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.blankj.utilcode.util.BusUtils;
 import com.lq.comnui.util.BarUtil;
 import com.lq.comnui.util.ComnToast;
 
@@ -94,11 +95,9 @@ public class BarActivity extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.btn_bar_add: //增加状态栏高度
                 BarUtil.addMarginTopEqualStatusBarHeight(BarHeight);
-                Log.e("xxxx","增加状态栏高度");
                 break;
             case R.id.btn_bar_delete: //减少状态栏高度
                 BarUtil.subtractMarginTopEqualStatusBarHeight(BarHeight);
-                Log.e("xxxx","减少状态栏高度");
                 break;
             case R.id.btn_bar_color: //设置状态栏颜色
                 if (isWhite){
