@@ -57,6 +57,36 @@
             android:layout_marginTop="@dimen/dp_20"
             android:text="屏幕" />
 
+        <com.lq.comnui.widget.PointView
+            android:id="@+id/pointText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iconTop="@drawable/ic_mail"
+            app:pointType="number"
+            app:pointStr="邮件"
+            app:pointColor="@color/Text333"
+            app:pointSize="@dimen/sp_12"
+            app:pointRedText="1"
+            app:pointRed="@color/white"
+            app:pointRedSize="@dimen/sp_6"
+            android:layout_marginTop="@dimen/dp_15"/>
+
+        <com.lq.comnui.widget.PointTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:pointStr="文本"
+            app:pointPadding="@dimen/dp_0"
+            app:pointColor="@color/Text333"
+            app:pointSize="@dimen/sp_13"
+            app:iconTop="@drawable/ic_mail"
+            app:pointRed="@color/white"
+            app:pointRedText="10086"
+            app:pointRedSize="@dimen/dp_3"
+            app:pointRedBg="@drawable/base_bg_redpoint"
+            app:pointType="number"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_gravity="center"/>
+
         <com.lq.comnui.widget.SettingBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +94,7 @@
             android:focusable="true"
             app:bar_leftText="左文本"
             app:bar_rightText="右文本"
-            android:layout_marginTop="@dimen/dp_15"/>
+            android:layout_marginTop="@dimen/dp_15" />
 
         <LinearLayout
             android:layout_width="match_parent"

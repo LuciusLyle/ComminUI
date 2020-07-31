@@ -27,6 +27,7 @@
         <activity android:name=".AppActivity"/>
         <activity android:name=".DeviceActivity"/>
         <activity android:name=".ScreenActivity"/>
+        <activity android:name=".navigation.WeiboActivity"/>
     </application>
 
 </manifest>

@@ -27,9 +27,11 @@ import com.lq.comnui.dialog.SelectDialog;
 import com.lq.comnui.dialog.TimeDialog;
 import com.lq.comnui.dialog.ToastDialog;
 import com.lq.comnui.dialog.WaitDialog;
+import com.lq.comnui.navigation.WeiboActivity;
 import com.lq.comnui.popup.MenuPopup;
 import com.lq.comnui.util.BarUtil;
 import com.lq.comnui.util.ComnToast;
+import com.lq.comnui.widget.PointView;
 import com.lq.widget.view.CountdownView;
 
 import java.util.ArrayList;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AppCompatButton btn_app; //App信息
     AppCompatButton btn_device; //设备信息
     AppCompatButton btn_screen; //屏幕
+    PointView pointText; //红点
+    boolean isNumber = false;
 
     CountdownView cv_test_countdown; //发送验证码
     AppCompatButton btn_bar; //状态栏
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_app = findViewById(R.id.btn_app);
         btn_device = findViewById(R.id.btn_device);
         btn_screen = findViewById(R.id.btn_screen);
+        pointText = findViewById(R.id.pointText);
 
         btn_dialog.setOnClickListener(this);
         cv_test_countdown.setOnClickListener(this);
@@ -69,6 +74,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_app.setOnClickListener(this);
         btn_device.setOnClickListener(this);
         btn_screen.setOnClickListener(this);
+
+        pointText.setOnClickListener(v -> {
+            startActivity(new Intent(this, WeiboActivity.class));
+//            if (isNumber){
+//                pointText.setRedNumber(1 + "");
+//                isNumber = false;
+//            }else {
+//                pointText.setRedNumber(10086 + "");
+//                isNumber = true;
+//            }
+        });
 
     }
 
