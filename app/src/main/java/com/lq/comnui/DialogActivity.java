@@ -3,6 +3,7 @@ package com.lq.comnui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +28,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-
-import static com.hjq.http.EasyUtils.postDelayed;
 
 public class DialogActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -289,7 +288,9 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                         // 消息文本可以不用填写
                         .setMessage("加载中...")
                         .show();
-                postDelayed(waitDialog::dismiss, 2500);
+
+//                waitDialog.dismiss();
+//                postDelayed(waitDialog::dismiss, 2500);
                 break;
             case R.id.btn_dialog_pay:
                 // 支付密码输入对话框

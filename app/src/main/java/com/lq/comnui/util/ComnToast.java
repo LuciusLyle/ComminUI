@@ -69,6 +69,7 @@ public class ComnToast extends Toast{
     public ComnToast setView(@LayoutRes int layoutResID) {
         LayoutInflater inflate = (LayoutInflater) applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view=inflate.inflate(layoutResID,null);
+
         setView(view);
         return this;
     }

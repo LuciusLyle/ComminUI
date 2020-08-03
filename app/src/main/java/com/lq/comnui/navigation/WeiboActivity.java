@@ -71,7 +71,7 @@ public class WeiboActivity extends AppCompatActivity {
                 .fragmentManager(getSupportFragmentManager())
                 .centerLayoutRule(EasyNavigationBar.RULE_BOTTOM)
                 .centerLayoutBottomMargin(0)   //加号到底部的距离
-                .centerAlignBottom(false)//加号是否同Tab文字底部对齐  RULE_BOTTOM时有效；
+                .centerAlignBottom(true)//加号是否同Tab文字底部对齐  RULE_BOTTOM时有效；
                 .setOnTabClickListener(new EasyNavigationBar.OnTabClickListener() {
                     @Override
                     public boolean onTabSelectEvent(View view, int position) {
@@ -98,7 +98,7 @@ public class WeiboActivity extends AppCompatActivity {
                     }
                 })
                 .mode(EasyNavigationBar.NavigationMode.MODE_ADD)
-                .anim(Anim.ZoomIn)
+                .anim(Anim.DropOut)
                 .animOnlyImage(true)
                 .build();
 

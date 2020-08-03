@@ -108,7 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,ScreenActivity.class));
                 break;
             case R.id.cv_test_countdown: // 发送验证码
-                cv_test_countdown.start();
+//                cv_test_countdown.start();
+                ComnToast.showMsg("xxxxxx");
                 break;
         }
     }
