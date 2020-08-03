@@ -14,7 +14,7 @@ import com.lq.comn.BaseAdapter;
 import com.lq.comn.BaseDialog;
 import com.lq.comn.action.AnimAction;
 import com.lq.comnui.R;
-import com.lq.comnui.SelectBean;
+import com.lq.comnui.bean.SelectBean;
 import com.lq.comnui.aop.SingleClick;
 import com.lq.comnui.common.MyAdapter;
 

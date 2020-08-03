@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_20"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/LView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_VersionName"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备系统版本号" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_VersionCode"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备系统版本码" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_AndroidID"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备 AndroidID" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Address"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备 MAC 地址" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Manufacturer"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备厂商" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Model"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取设备型号" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

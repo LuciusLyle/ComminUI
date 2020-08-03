@@ -69,4 +69,30 @@
         <attr name="sizeRatio" format="float" />
     </declare-styleable>
 
+    <!-- 带红点文本 -->
+    <declare-styleable name="PointText">
+        <!-- 文字 -->
+        <attr name="pointStr" format="string"/>
+        <attr name="pointPadding" format="dimension" />
+        <attr name="pointColor" format="color"/>
+        <attr name="pointSize" format="dimension" />
+        <!-- 红点文字 -->
+        <attr name="pointRed" format="color" />
+        <attr name="pointRedText" format="string" />
+        <attr name="pointRedSize" format="dimension" />
+        <attr name="pointRedBg" format="reference" />
+        <!-- 图片 -->
+        <attr name="iconTop" format="reference" />
+        <attr name="iconBottom" format="reference" />
+        <attr name="iconLeft" format="reference" />
+        <attr name="iconRight" format="reference" />
+        <!-- 常用红点类型 -->
+        <attr name="pointType" >
+            <!-- 手机号（只能以 1 开头） -->
+            <enum name="point" value="0x01" />
+            <!-- 中文（普通的中文字符） -->
+            <enum name="number" value="0x02" />
+        </attr>
+    </declare-styleable>
+
 </resources>

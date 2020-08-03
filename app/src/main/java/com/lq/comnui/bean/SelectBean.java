@@ -1,4 +1,4 @@
-package com.lq.comnui;
+package com.lq.comnui.bean;
 
 //选择实体类
 public class SelectBean {

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.lq.comn.BaseDialog;
+import com.lq.comnui.bean.SelectBean;
 import com.lq.comnui.dialog.AddressDialog;
 import com.lq.comnui.dialog.DateDialog;
 import com.lq.comnui.dialog.InputDialog;

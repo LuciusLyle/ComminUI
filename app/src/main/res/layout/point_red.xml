@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/dp_4">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pointImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pointTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/Text333"
+            android:text="文本" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/point"
+        android:layout_width="@dimen/dp_8"
+        android:layout_height="@dimen/dp_8"
+        android:background="@drawable/base_bg_redpoint"
+        android:layout_gravity="top|right"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pointNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="top|right"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_6"
+        android:background="@drawable/base_bg_redpoint"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="1"
+        android:visibility="gone"
+        android:minWidth="@dimen/dp_8" />
+
+</FrameLayout>

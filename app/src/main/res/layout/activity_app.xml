@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_20"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/LView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_PackageName"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取 App 包名" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Name"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取 App 名称" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Path"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取 App 路径" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_VersionName"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取 App 版本号" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_VersionCode"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="获取 App 版本码" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
