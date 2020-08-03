@@ -23,6 +23,7 @@
         </activity>
 
         <activity android:name=".BarActivity"/>
+        <activity android:name=".BarActivity1"/>
         <activity android:name=".DialogActivity"/>
         <activity android:name=".AppActivity"/>
         <activity android:name=".DeviceActivity"/>

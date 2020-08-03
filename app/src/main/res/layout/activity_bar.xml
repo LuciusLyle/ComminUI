@@ -3,23 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:layout_marginStart="@dimen/dp_20"
-    android:layout_marginEnd="@dimen/dp_20"
-    android:overScrollMode="never">
+    android:overScrollMode="never"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/dp_20"
-        android:background="@color/white">
+        android:paddingBottom="@dimen/dp_20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/blue"
+            android:textColor="@color/red"
+            android:text="这是一个自定义导航栏" />
 
         <View
             android:id="@+id/BarHeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="10dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_bar_height"
@@ -27,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
-            android:text="获取状态栏高度（px）" />
+            android:text="全屏模式1(导航栏显示,布局置顶状态栏)" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_bar_gone"

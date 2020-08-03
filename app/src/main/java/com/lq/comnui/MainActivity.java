@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
         switch (id){
             case R.id.btn_bar: //状态栏
-                startActivity(new Intent(this,BarActivity.class));
+                startActivity(new Intent(this,BarActivity1.class));
                 break;
             case R.id.btn_dialog: //弹框
                 startActivity(new Intent(this,DialogActivity.class));
