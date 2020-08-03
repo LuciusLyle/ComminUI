@@ -178,7 +178,7 @@ public final class PayPasswordDialog {
         /** 空按钮条目 */
         private static final int TYPE_EMPTY = 2;
 
-        private KeyboardAdapter(Context context) {
+        private     KeyboardAdapter(Context context) {
             super(context);
         }
 

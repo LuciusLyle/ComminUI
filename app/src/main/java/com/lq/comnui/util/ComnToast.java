@@ -50,7 +50,16 @@ public class ComnToast extends Toast{
         super(applicationContext);
         customView= R.layout.comn_toast_default;
         setView(customView);
-        _instance.getView().addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+        setDuration(customViewDuration);
+        setGravity(customGravity,xOffset,intyOffsetl);
+    }
+
+    //需要使用新的布局可以 setView(新布局资源ID).setMsg(新布局中控件ID,显示内容)
+    public ComnToast setView(@LayoutRes int layoutResID) {
+        LayoutInflater inflate = (LayoutInflater) applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view=inflate.inflate(layoutResID,null);
+        setView(view);
+        view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override
             public void onViewAttachedToWindow(View v) {
                 isShow = true;
@@ -61,15 +70,6 @@ public class ComnToast extends Toast{
                 isShow = false;
             }
         });
-        setDuration(customViewDuration);
-        setGravity(customGravity,xOffset,intyOffsetl);
-    }
-
-    //需要使用新的布局可以 setView(新布局资源ID).setMsg(新布局中控件ID,显示内容)
-    public ComnToast setView(@LayoutRes int layoutResID) {
-        LayoutInflater inflate = (LayoutInflater) applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view=inflate.inflate(layoutResID,null);
-        setView(view);
         return this;
     }
 
