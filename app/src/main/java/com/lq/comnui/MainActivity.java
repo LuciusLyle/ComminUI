@@ -32,6 +32,8 @@ import com.lq.comnui.popup.MenuPopup;
 import com.lq.comnui.util.BarUtil;
 import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
+import com.lq.comnui.widget.anim.customAnim.AnimatorFactory;
+import com.lq.comnui.widget.anim.customAnim.animaFactory.DropOutAnimator;
 import com.lq.widget.view.CountdownView;
 
 import java.util.ArrayList;
@@ -93,7 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
         switch (id){
             case R.id.btn_bar: //状态栏
-                startActivity(new Intent(this,BarActivity1.class));
+                new AnimatorFactory().createAnima(DropOutAnimator.class,view).setDuration(2000).start();
+               // startActivity(new Intent(this,BarActivity1.class));
                 break;
             case R.id.btn_dialog: //弹框
                 startActivity(new Intent(this,DialogActivity.class));
