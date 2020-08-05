@@ -89,14 +89,14 @@ public class WeiboActivity extends AppCompatActivity {
                     }
 
                 })
-                .setOnCenterTabClickListener(new EasyNavigationBar.OnCenterTabSelectListener() {
-                    @Override
-                    public boolean onCenterTabSelectEvent(View view) {
-                        //跳转页面（全民K歌）   或者   弹出菜单（微博）
-                        showMunu();
-                        return false;
-                    }
-                })
+//                .setOnCenterTabClickListener(new EasyNavigationBar.OnCenterTabSelectListener() {
+//                    @Override
+//                    public boolean onCenterTabSelectEvent(View view) {
+//                        //跳转页面（全民K歌）   或者   弹出菜单（微博）
+//                        showMunu();
+//                        return false;
+//                    }
+//                })
                 .mode(EasyNavigationBar.NavigationMode.MODE_ADD)
                 .anim(Anim.DropOut)
                 .animOnlyImage(true)
@@ -182,7 +182,7 @@ public class WeiboActivity extends AppCompatActivity {
                             public void onAnimationStart(Animator animation) {
                                 navigationBar.getAddViewLayout().setVisibility(View.VISIBLE);
                             }
-
+  
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 //							layout.setVisibility(View.VISIBLE);

@@ -1,19 +1,15 @@
-package com.lq.comnui.widget.anim.customAnim;
+package com.lq.comnui.anim.customAnim;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-
-import com.daimajia.androidanimations.library.BaseViewAnimator;
-
-import androidx.core.view.ViewCompat;
-
 /**
  * @author
  * @version 1.0
  * @date 2020/8/3
+ * 管理Animator 
  */
 public abstract class BaseAnimator {
 

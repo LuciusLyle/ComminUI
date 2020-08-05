@@ -47,7 +47,7 @@
         android:layout_toRightOf="@+id/ll_tab_content"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="9sp"
+        android:textSize="@dimen/sp_9"
         android:visibility="gone" />
 
 

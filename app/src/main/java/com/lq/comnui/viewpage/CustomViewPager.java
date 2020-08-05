@@ -1,4 +1,4 @@
-package com.lq.comnui.navigation;
+package com.lq.comnui.viewpage;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -22,6 +22,10 @@ public class CustomViewPager extends ViewPager {
         super(context, attrs);
     }
 
+    /**
+     * 是否可滑动
+     * @param isCanScroll
+     */
     public void setCanScroll(boolean isCanScroll) {
         this.isCanScroll = isCanScroll;
     }

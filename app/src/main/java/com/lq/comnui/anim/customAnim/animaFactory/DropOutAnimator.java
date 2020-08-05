@@ -1,14 +1,12 @@
-package com.lq.comnui.widget.anim.customAnim.animaFactory;
+package com.lq.comnui.anim.customAnim.animaFactory;
 
 import android.animation.ArgbEvaluator;
-import android.animation.FloatEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
-import android.util.Log;
 import android.view.View;
 
-import com.lq.comnui.widget.anim.customAnim.BaseAnimator;
+import com.lq.comnui.anim.customAnim.BaseAnimator;
 
 /**
  * @author

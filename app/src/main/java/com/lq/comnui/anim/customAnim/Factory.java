@@ -1,4 +1,4 @@
-package com.lq.comnui.widget.anim.customAnim;
+package com.lq.comnui.anim.customAnim;
 
 import android.view.View;
 

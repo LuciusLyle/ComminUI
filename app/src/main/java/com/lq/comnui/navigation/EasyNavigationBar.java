@@ -25,6 +25,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.lq.comnui.R;
+import com.lq.comnui.viewpage.CustomViewPager;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

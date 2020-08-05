@@ -2,47 +2,23 @@ package com.lq.comnui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 
-import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
-import com.blankj.utilcode.util.DeviceUtils;
-import com.blankj.utilcode.util.ImageUtils;
-import com.blankj.utilcode.util.IntentUtils;
-import com.blankj.utilcode.util.ObjectUtils;
-import com.blankj.utilcode.util.ScreenUtils;
-import com.lq.comn.BaseDialog;
 import com.lq.comn.action.HandlerAction;
-import com.lq.comnui.dialog.AddressDialog;
-import com.lq.comnui.dialog.DateDialog;
-import com.lq.comnui.dialog.InputDialog;
-import com.lq.comnui.dialog.MenuDialog;
-import com.lq.comnui.dialog.MessageDialog;
-import com.lq.comnui.dialog.PayPasswordDialog;
-import com.lq.comnui.dialog.SelectDialog;
-import com.lq.comnui.dialog.TimeDialog;
-import com.lq.comnui.dialog.ToastDialog;
-import com.lq.comnui.dialog.WaitDialog;
 import com.lq.comnui.navigation.WeiboActivity;
-import com.lq.comnui.popup.MenuPopup;
-import com.lq.comnui.util.BarUtil;
 import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
-import com.lq.comnui.widget.anim.customAnim.AnimatorFactory;
-import com.lq.comnui.widget.anim.customAnim.animaFactory.DropOutAnimator;
+import com.lq.comnui.anim.customAnim.AnimatorFactory;
+import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
 import com.lq.widget.view.CountdownView;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
-
+    
     AppCompatButton btn_dialog; //弹框
     AppCompatButton btn_app; //App信息
     AppCompatButton btn_device; //设备信息
@@ -87,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                isNumber = true;
 //            }
         });
-
+        
     }
 
     @Override

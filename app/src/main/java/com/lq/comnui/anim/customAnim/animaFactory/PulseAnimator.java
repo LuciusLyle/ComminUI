@@ -1,9 +1,9 @@
-package com.lq.comnui.widget.anim.customAnim.animaFactory;
+package com.lq.comnui.anim.customAnim.animaFactory;
 
 import android.animation.ObjectAnimator;
 import android.view.View;
 
-import com.lq.comnui.widget.anim.customAnim.BaseAnimator;
+import com.lq.comnui.anim.customAnim.BaseAnimator;
 
 /**
  * @author
