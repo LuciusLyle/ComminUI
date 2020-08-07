@@ -3,13 +3,11 @@ package com.lq.comnui.recyclerView.wrapper;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.lq.comnui.recyclerView.base.ViewHolder;
 import com.lq.comnui.recyclerView.utils.WrapperUtils;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final int ITEM_TYPE_LOAD_MORE = Integer.MAX_VALUE - 2;
@@ -17,13 +15,15 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
     private RecyclerView.Adapter mInnerAdapter;
     private View mLoadMoreView;
     private int mLoadMoreLayoutId;
+    private boolean isShow = false;
+    private boolean isloading = false;
 
     public LoadMoreWrapper(RecyclerView.Adapter adapter) {
         mInnerAdapter = adapter;
     }
 
     private boolean hasLoadMore() {
-        return mLoadMoreView != null || mLoadMoreLayoutId != 0;
+        return (mLoadMoreView != null || mLoadMoreLayoutId != 0) && isShow;
     }
 
     private boolean isShowLoadMore(int position) {
@@ -55,7 +55,8 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (isShowLoadMore(position)) {
-            if (mOnLoadMoreListener != null) {
+            if (mOnLoadMoreListener != null && !isloading) {
+                isloading=true;
                 mOnLoadMoreListener.onLoadMoreRequested();
             }
             return;
@@ -86,19 +87,11 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
         mInnerAdapter.onViewAttachedToWindow(holder);
 
         if (isShowLoadMore(holder.getLayoutPosition())) {
-            setFullSpan(holder);
+            WrapperUtils.setFullSpan(holder);
         }
     }
 
-    private void setFullSpan(RecyclerView.ViewHolder holder) {
-        ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
 
-        if (lp != null && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
-            StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
-
-            p.setFullSpan(true);
-        }
-    }
 
     @Override
     public int getItemCount() {
@@ -127,4 +120,17 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
         mLoadMoreLayoutId = layoutId;
         return this;
     }
+
+    public void hideLoadMore(){
+        isShow=false;
+    }
+    
+    public void showLoadMore(){
+        isShow = true;
+        isloading=false;
+    }
+    public void setloading(boolean isLoading){
+        this.isloading = isLoading;
+    }
+    
 }

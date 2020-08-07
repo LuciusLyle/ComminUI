@@ -1,15 +1,15 @@
-package com.lq.comnui;
+package com.lq.comnui.test;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.lq.comn.BaseDialog;
+import com.lq.comnui.R;
 import com.lq.comnui.bean.SelectBean;
 import com.lq.comnui.dialog.AddressDialog;
 import com.lq.comnui.dialog.DateDialog;

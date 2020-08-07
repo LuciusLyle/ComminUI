@@ -1,4 +1,4 @@
-package com.lq.comnui;
+package com.lq.comnui.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.blankj.utilcode.util.BarUtils;
 import com.lq.comn.action.HandlerAction;
+import com.lq.comnui.R;
 import com.lq.comnui.navigation.WeiboActivity;
 import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        BarUtils.getStatusBarHeight();
+        //BarUtils.getStatusBarHeight();
     }
 
     private void initView(){
@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_app.setOnClickListener(this);
         btn_device.setOnClickListener(this);
         btn_screen.setOnClickListener(this);
-
+        findViewById(R.id.btn_adapter).setOnClickListener(this);
+        findViewById(R.id.btn_edit).setOnClickListener(this);
         pointText.setOnClickListener(v -> {
             startActivity(new Intent(this, WeiboActivity.class));
 //            if (isNumber){
@@ -90,6 +91,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                cv_test_countdown.start();
                 ComnToast.showMsg("xxxxxx");
                 break;
+            case R.id.btn_adapter:// 自定义adapter
+                startActivity(new Intent(this, RecyclerViewActivity.class));
+                break;
+            case R.id.btn_edit:// 输入框
+                startActivity(new Intent(this,EditTextActivity.class));
+                break;
+            
         }
     }
 }

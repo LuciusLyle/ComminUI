@@ -1,10 +1,9 @@
-package com.lq.comnui.recyclerView.wrapper;
+package com.lq.comnui.test;
 
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 
 import com.lq.comnui.recyclerView.base.ViewHolder;
 import com.lq.comnui.recyclerView.utils.WrapperUtils;
@@ -20,10 +19,6 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
     private SparseArrayCompat<View> mHeaderViews = new SparseArrayCompat<>();
     private SparseArrayCompat<View> mFootViews = new SparseArrayCompat<>();
 
-
-    private int removeHeaderSize =0;
-    private int removeFootSize=0;
-    
     private RecyclerView.Adapter mInnerAdapter;
 
     public HeaderAndFooterWrapper(RecyclerView.Adapter adapter) {
@@ -33,11 +28,13 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (mHeaderViews.get(viewType) != null) {
-            ViewHolder holder = ViewHolder.createViewHolder(parent.getContext(), mHeaderViews.get(viewType));
-
+            ViewHolder holder =
+                    ViewHolder.createViewHolder(parent.getContext(), mHeaderViews.get(viewType));
+         
             return holder;
         } else if (mFootViews.get(viewType) != null) {
-            ViewHolder holder = ViewHolder.createViewHolder(parent.getContext(), mFootViews.get(viewType));
+            ViewHolder holder =
+                    ViewHolder.createViewHolder(parent.getContext(), mFootViews.get(viewType));
             return holder;
         }
         return mInnerAdapter.onCreateViewHolder(parent, viewType);
@@ -59,8 +56,9 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        Log.e("xxx","绑定数据:"+position);
         if (isHeaderViewPos(position)) {
-            ((TextView) holder.itemView).setText(((TextView) holder.itemView).getTag() + "下标:" + position);
+            ((TextView)holder.itemView).setText(((TextView)holder.itemView).getTag()+"下标:"+ position);
             return;
         }
         if (isFooterViewPos(position)) {
@@ -76,20 +74,21 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        WrapperUtils.onAttachedToRecyclerView(mInnerAdapter, recyclerView, new WrapperUtils.SpanSizeCallback() {
-            @Override
-            public int getSpanSize(GridLayoutManager layoutManager, GridLayoutManager.SpanSizeLookup oldLookup, int position) {
-                int viewType = getItemViewType(position);
-                if (mHeaderViews.get(viewType) != null) {
-                    return layoutManager.getSpanCount();
-                } else if (mFootViews.get(viewType) != null) {
-                    return layoutManager.getSpanCount();
-                }
-                if (oldLookup != null)
-                    return oldLookup.getSpanSize(position);
-                return 1;
-            }
-        });
+        WrapperUtils.onAttachedToRecyclerView(mInnerAdapter, recyclerView,
+                new WrapperUtils.SpanSizeCallback() {
+                    @Override
+                    public int getSpanSize(GridLayoutManager layoutManager,
+                                           GridLayoutManager.SpanSizeLookup oldLookup, int position) {
+                        int viewType = getItemViewType(position);
+                        if (mHeaderViews.get(viewType) != null) {
+                            return layoutManager.getSpanCount();
+                        } else if (mFootViews.get(viewType) != null) {
+                            return layoutManager.getSpanCount();
+                        }
+                        if (oldLookup != null) return oldLookup.getSpanSize(position);
+                        return 1;
+                    }
+                });
     }
 
     @Override
@@ -109,30 +108,29 @@ public class HeaderAndFooterWrapper<T> extends RecyclerView.Adapter<RecyclerView
         return position >= getHeadersCount() + getRealItemCount();
     }
 
-    
     public void addHeaderView(View view) {
-        mHeaderViews.put((mHeaderViews.size()+removeHeaderSize) + BASE_ITEM_TYPE_HEADER, view);
+        Log.e("xxx","加入的key: "+(mHeaderViews.size() + BASE_ITEM_TYPE_HEADER));
+        mHeaderViews.put(mHeaderViews.size() + BASE_ITEM_TYPE_HEADER, view);
     }
-
-
-    public void removeHeaderView(int index) {
-        mHeaderViews.removeAt(index);
-        removeHeaderSize++;
+    public void removeHeaderView(int headsPostion){
+        if (headsPostion>-1 /*&& mHeaderViews.size()>headsPostion*/){
+           
+            Log.e("xxx","删除前："+mHeaderViews.size() );
+            Log.e("xxx","删除的key: "+(headsPostion + BASE_ITEM_TYPE_HEADER) );
+            //mHeaderViews.removeAt(headsPostion+BASE_ITEM_TYPE_HEADER);
+            mHeaderViews.remove(headsPostion+BASE_ITEM_TYPE_HEADER);
+            Log.e("xxx","删除后："+mHeaderViews.size() );
+            //mInnerAdapter.notifyItemRemoved(headsPostion);
+        }
     }
-    public int getRemoveHeaderSize(){
-        return removeHeaderSize;
+    public void removeFootView(int footsPostion){
+        if (footsPostion>-1 && mFootViews.size()>footsPostion){
+            mFootViews.remove(footsPostion + BASE_ITEM_TYPE_FOOTER);
+            mInnerAdapter.notifyItemRemoved(footsPostion);
+        }
     }
-    public int getRemoveFootSize(){
-        return removeFootSize;
-    }
-    
-    public void removeFootView(int index) {
-        mFootViews.removeAt(index);
-        removeFootSize++;
-    }
-
     public void addFootView(View view) {
-        mFootViews.put((mFootViews.size()+removeFootSize) + BASE_ITEM_TYPE_FOOTER, view);
+        mFootViews.put(mFootViews.size() + BASE_ITEM_TYPE_FOOTER, view);
     }
 
     public int getHeadersCount() {

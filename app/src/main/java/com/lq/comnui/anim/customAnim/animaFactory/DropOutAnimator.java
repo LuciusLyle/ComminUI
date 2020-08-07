@@ -31,9 +31,9 @@ public class DropOutAnimator extends BaseAnimator {
         new ArgbEvaluator();
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(view, "alpha", 0, 1);
       
-        objectAnimator.setEvaluator(new TypeEvaluator<Float>() {
-            @Override
-            public Float evaluate(float fraction, Float startValue, Float endValue) {
+//        objectAnimator.setEvaluator(new TypeEvaluator<Float>() {
+//            @Override
+//            public Float evaluate(float fraction, Float startValue, Float endValue) {
 //                float t = DropOutAnimator.this.getDuration()* fraction;//2000 *(0~1)
 //                float b = startValue.floatValue();//0
 //                float c = endValue.floatValue() - startValue.floatValue();//1
@@ -46,7 +46,7 @@ public class DropOutAnimator extends BaseAnimator {
 //                    return fraction;
 //                }
                 //return c*((t=t/d-1)*t*t*t*t + 1) + b;
-                return fraction;
+//                return fraction;
 
 //                int startInt = startValue.intValue();
 //                float startA = ((startInt >> 24) & 0xff) / 255.0f;
@@ -82,8 +82,8 @@ public class DropOutAnimator extends BaseAnimator {
 //                b = (float) Math.pow(b, 1.0 / 2.2) * 255.0f;
 //
 //                return Float.valueOf(Math.round(a) << 24 | Math.round(r) << 16 | Math.round(g) << 8 | Math.round(b));
-            }
-        });
+//            }
+//        });
         return objectAnimator;
     };
 }

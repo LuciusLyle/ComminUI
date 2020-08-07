@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:overScrollMode="never"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".test.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

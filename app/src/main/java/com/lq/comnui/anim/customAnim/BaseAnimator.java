@@ -10,6 +10,7 @@ import android.view.animation.Interpolator;
  * @version 1.0
  * @date 2020/8/3
  * 管理Animator 
+ * "alpha","scaleX","scaleY","translationX","translationY"
  */
 public abstract class BaseAnimator {
 

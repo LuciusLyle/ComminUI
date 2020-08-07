@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:padding="@dimen/dp_10"
-            android:src="@drawable/ic_dialog_close" />
+            android:src="@drawable/com_ic_dialog_close" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_address_title"

@@ -36,18 +36,20 @@ dependencies {
 //    implementation 'com.google.android.material:material:1.2.0-alpha04'
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // ButterKnife 注解库：https://github.com/JakeWharton/butterknife
-    if (project.hasProperty('android.injected.invoked.from.ide')) {
-        // 开发时使用运行时注解，提升 IDE 编译速度
-        implementation 'com.jakewharton:butterknife-reflect:10.2.0'
-    } else {
-        // 打包时使用编译时注解，提升 APP 运行速度
-        implementation 'com.jakewharton:butterknife:10.2.0'
-        annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    }
+//    if (project.hasProperty('android.injected.invoked.from.ide')) {
+//        // 开发时使用运行时注解，提升 IDE 编译速度
+//        implementation 'com.jakewharton:butterknife-reflect:10.2.0'
+//    } else {
+//        // 打包时使用编译时注解，提升 APP 运行速度
+//        implementation 'com.jakewharton:butterknife:10.2.0'
+//        annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+//    }
 
 //    // 权限请求框架：https://github.com/getActivity/XXPermissions
 //    implementation 'com.hjq:xxpermissions:6.2'
@@ -55,7 +57,7 @@ dependencies {
 //    implementation 'com.hjq:http:5.0'
     // 工具类
     implementation 'com.blankj:utilcode:1.23.5'
-
+//
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.2@aar'
 

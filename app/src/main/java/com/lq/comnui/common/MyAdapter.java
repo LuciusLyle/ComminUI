@@ -13,7 +13,6 @@ import com.lq.comn.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 
 /**
  *    author : Android 轮子哥
@@ -192,12 +191,10 @@ public abstract class MyAdapter<T> extends BaseAdapter<MyAdapter.ViewHolder> {
 
         public ViewHolder(@LayoutRes int id) {
             super(id);
-            ButterKnife.bind(this, itemView);
         }
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
         }
     }
 

@@ -1,9 +1,6 @@
 package com.lq.comnui.viewpage;
 
 
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.fragment.app.Fragment;

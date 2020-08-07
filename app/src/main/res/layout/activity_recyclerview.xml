@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加头部" />
+
+            <Button
+                android:id="@+id/addfooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加尾部" />
+
+            <Button
+                android:id="@+id/deletehead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除头部" />
+            <Button
+                android:id="@+id/deleteheadindex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除指定头部" />
+            <Button
+                android:id="@+id/deletefooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除尾部" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="删除指定head"
+        android:inputType="number" />
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

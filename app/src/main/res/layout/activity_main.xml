@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".test.MainActivity"
     android:orientation="vertical"
     android:layout_marginStart="@dimen/dp_20"
     android:layout_marginEnd="@dimen/dp_20"
@@ -56,7 +56,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
             android:text="屏幕" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_adapter"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="自定义adapter" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edit"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="输入框" />
+        
         <com.lq.comnui.widget.PointView
             android:id="@+id/pointText"
             android:layout_width="match_parent"
@@ -66,10 +81,10 @@
             app:pointStr="邮件"
             app:pointColor="@color/Text333"
             app:pointSize="@dimen/sp_12"
-            app:pointRedText="1"
+            app:pointRedText="12"
             app:pointRed="@color/white"
             app:pointRedSize="@dimen/sp_6"
-            android:layout_marginTop="@dimen/dp_15"/>
+            android:layout_marginTop="@dimen/dp_10"/>
 
         <com.lq.comnui.widget.PointTextView
             android:layout_width="wrap_content"
@@ -77,11 +92,11 @@
             app:pointStr="文本"
             app:pointPadding="@dimen/dp_0"
             app:pointColor="@color/Text333"
-            app:pointSize="@dimen/sp_13"
+            app:pointSize="@dimen/sp_6"
             app:iconTop="@drawable/ic_mail"
             app:pointRed="@color/white"
             app:pointRedText="10086"
-            app:pointRedSize="@dimen/dp_3"
+            app:pointRedSize="@dimen/dp_2"
             app:pointRedBg="@drawable/base_bg_redpoint"
             app:pointType="number"
             android:layout_marginTop="@dimen/dp_15"
@@ -204,64 +219,7 @@
 
         </LinearLayout>
 
-        <com.lq.widget.view.ClearEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_15"
-            android:text="这是一个带清除的按钮的EditText"/>
 
-        <com.lq.widget.view.PasswordEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_15"
-            android:maxLength="20"
-            android:maxLines="1"
-            android:text="78797078"/>
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_15"
-            android:hint="这里只能输入手机号（只能以 1 开头）"
-            app:regexType="mobile" />
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="这里只能输入中文（普通的中文字符）"
-            app:regexType="chinese" />
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="这里只能输入英文（大写和小写的英文）"
-            app:regexType="english" />
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="这里只能输入数量（非 0 开头的数字）"
-            app:regexType="count" />
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="这里只能输入用户名（中文、英文、数字）"
-            app:regexType="name" />
-
-        <com.lq.widget.view.RegexEditText
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="这里只能输入非空格的字符"
-            app:regexType="nonnull" />
 
     </LinearLayout>
 

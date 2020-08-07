@@ -47,40 +47,41 @@ public final class PointView extends FrameLayout {
 
         addView(pointView, 0, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
-        final TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.PointText);
-
-        //图标
-        if (array.hasValue(R.styleable.PointText_iconTop)) {
-            setPointIcon(array.getDrawable(R.styleable.PointText_iconTop));
-        }
-        //文本
-        if (array.hasValue(R.styleable.PointText_pointStr)) {
-            setPointText(array.getString(R.styleable.PointText_pointStr));
-        }
-        setPointColor(array.getColor(R.styleable.PointText_pointColor, ContextCompat.getColor(getContext(), R.color.Text333)));
-        setPointTvSize(TypedValue.COMPLEX_UNIT_PX, array.getDimensionPixelOffset(R.styleable.PointText_pointSize, 0));
-        if (array.hasValue(R.styleable.PointText_pointType)) {
-            int regexType = array.getInt(R.styleable.PointText_pointType, 0);
-            switch (regexType) {
-                case 0x01: //普通类型
-                    point.setVisibility(VISIBLE);
-                    pointNumber.setVisibility(GONE);
-                    break;
-                case 0x02: //数字类型
-                    point.setVisibility(GONE);
-                    pointNumber.setVisibility(VISIBLE);
-                    //红点
-                    if (array.hasValue(R.styleable.PointText_pointRedText)) {
-                        setRedNumber(array.getString(R.styleable.PointText_pointRedText));
-                    }
-                    setRedSize(TypedValue.COMPLEX_UNIT_PX, array.getDimensionPixelOffset(R.styleable.PointText_pointRedSize, 0));
-                    setRedColor(array.getColor(R.styleable.PointText_pointRed, ContextCompat.getColor(getContext(), R.color.white)));
-                    break;
-                default:
-                    break;
+        TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.PointText);
+        if (array != null) {
+            //图标
+            if (array.hasValue(R.styleable.PointText_iconTop)) {
+                setPointIcon(array.getDrawable(R.styleable.PointText_iconTop));
             }
+            //文本
+            if (array.hasValue(R.styleable.PointText_pointStr)) {
+                setPointText(array.getString(R.styleable.PointText_pointStr));
+            }
+            setPointColor(array.getColor(R.styleable.PointText_pointColor, ContextCompat.getColor(getContext(), R.color.Text333)));
+            setPointTvSize(TypedValue.COMPLEX_UNIT_PX, array.getDimensionPixelOffset(R.styleable.PointText_pointSize, 0));
+            if (array.hasValue(R.styleable.PointText_pointType)) {
+                int regexType = array.getInt(R.styleable.PointText_pointType, 0);
+                switch (regexType) {
+                    case 0x01: //普通类型
+                        point.setVisibility(VISIBLE);
+                        pointNumber.setVisibility(GONE);
+                        break;
+                    case 0x02: //数字类型
+                        point.setVisibility(GONE);
+                        pointNumber.setVisibility(VISIBLE);
+                        //红点
+                        if (array.hasValue(R.styleable.PointText_pointRedText)) {
+                            setRedNumber(array.getString(R.styleable.PointText_pointRedText));
+                        }
+                        setRedSize(TypedValue.COMPLEX_UNIT_PX, array.getDimensionPixelOffset(R.styleable.PointText_pointRedSize, 0));
+                        setRedColor(array.getColor(R.styleable.PointText_pointRed, ContextCompat.getColor(getContext(), R.color.white)));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            array.recycle();
         }
-        array.recycle();
     }
 
     /**
@@ -90,6 +91,7 @@ public final class PointView extends FrameLayout {
         setPointIcon(ContextCompat.getDrawable(getContext(), id));
         return this;
     }
+
     public PointView setPointIcon(Drawable drawable) {
         pointImg.setImageDrawable(drawable);
         return this;
@@ -101,10 +103,12 @@ public final class PointView extends FrameLayout {
     public PointView setPointText(@StringRes int id) {
         return setPointText(getResources().getString(id));
     }
+
     public PointView setPointText(CharSequence text) {
         pointTv.setText(text);
         return this;
     }
+
     /**
      * 设置文本颜色
      */
@@ -112,6 +116,7 @@ public final class PointView extends FrameLayout {
         pointTv.setTextColor(color);
         return this;
     }
+
     /**
      * 设置文本大小
      */
@@ -126,17 +131,19 @@ public final class PointView extends FrameLayout {
     public PointView setRedNumber(@StringRes int id) {
         return setRedNumber(getResources().getString(id));
     }
+
     public PointView setRedNumber(CharSequence text) {
-        if (!ComnUtil.isEmpty(text)){
+        if (!ComnUtil.isEmpty(text)) {
             int count = Integer.parseInt(text.toString());
-            if (count > 99){
+            if (count > 99) {
                 pointNumber.setText("99+");
-            }else {
+            } else {
                 pointNumber.setText(text);
             }
         }
         return this;
     }
+
     /**
      * 设置红点文字大小
      */
@@ -144,6 +151,7 @@ public final class PointView extends FrameLayout {
         pointNumber.setTextSize(unit, size);
         return this;
     }
+
     /**
      * 设置文本颜色
      */

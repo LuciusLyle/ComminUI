@@ -1,19 +1,18 @@
-package com.lq.comnui;
+package com.lq.comnui.test;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
+
+import com.lq.comnui.R;
+import com.lq.comnui.util.BarUtil;
+import com.lq.comnui.util.ComnToast;
+import com.lq.comnui.util.StatusBarUtil;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import com.blankj.utilcode.util.BusUtils;
-import com.lq.comnui.util.BarUtil;
-import com.lq.comnui.util.ComnToast;
-
-public class BarActivity extends AppCompatActivity implements View.OnClickListener {
+public class BarActivity1 extends AppCompatActivity implements View.OnClickListener {
 
     View BarHeight; //View
     AppCompatButton btn_bar_height; //获取状态栏高度（px）
@@ -79,8 +78,8 @@ public class BarActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         int id = view.getId();
         switch (id){
-            case R.id.btn_bar_height: //获取状态栏高度
-                ComnToast.showMsg(BarUtil.getStatusBarHeight() + "px");
+            case R.id.btn_bar_height:
+                StatusBarUtil.statusBarLightMode(this);
                 break;
             case R.id.btn_bar_gone: //设置状态栏是否可见
                 if (BarUtil.isStatusBarVisible(this)){

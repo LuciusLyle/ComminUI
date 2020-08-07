@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".test.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +22,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BarActivity"/>
-        <activity android:name=".BarActivity1"/>
-        <activity android:name=".DialogActivity"/>
-        <activity android:name=".AppActivity"/>
-        <activity android:name=".DeviceActivity"/>
-        <activity android:name=".ScreenActivity"/>
+        <activity android:name=".test.BarActivity"/>
+        <activity android:name=".test.BarActivity1"/>
+        <activity android:name=".test.DialogActivity"/>
+        <activity android:name=".test.AppActivity"/>
+        <activity android:name=".test.DeviceActivity"/>
+        <activity android:name=".test.ScreenActivity"/>
         <activity android:name=".navigation.WeiboActivity"/>
+        <activity android:name=".test.EditTextActivity"/>
+        <activity android:name=".test.RecyclerViewActivity"/>
+        
     </application>
 
 </manifest>

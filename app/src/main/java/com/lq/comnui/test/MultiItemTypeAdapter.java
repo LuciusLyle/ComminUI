@@ -1,18 +1,19 @@
-package com.lq.comnui.recyclerView;
+package com.lq.comnui.test;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 import com.lq.comnui.recyclerView.base.ItemViewDelegate;
 import com.lq.comnui.recyclerView.base.ItemViewDelegateManager;
 import com.lq.comnui.recyclerView.base.ViewHolder;
 import com.lq.comnui.recyclerView.utils.WrapperUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.collection.SparseArrayCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -20,12 +21,14 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     protected Context mContext;
     protected List<T> mDatas;
+    private ArrayList<View> mHeaderViews = new ArrayList<>();
+    private ArrayList<View> mFootViews = new ArrayList<>();
+    
 
     protected ItemViewDelegateManager mItemViewDelegateManager;
     protected OnItemClickListener mOnItemClickListener;
 
     public MultiItemTypeAdapter(Context context, List<T> datas) {
-        
         mContext = context;
         mDatas = datas;
         mItemViewDelegateManager = new ItemViewDelegateManager();
@@ -33,9 +36,26 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        if (!useItemViewDelegateManager())
+        if (mHeaderViews.size()>0) {
+            if (mHeaderViews.size() > position) {
+                return super.getItemViewType(position);
+            } else if (mDatas.size() > 0 && (mDatas.size() + mHeaderViews.size()) > position) {
+                int dataIndex = position - mHeaderViews.size();
+                return  mItemViewDelegateManager.getItemViewType(mDatas.get(dataIndex), dataIndex);
+            } else if (mFootViews.size() > 0 && (mDatas.size() + mHeaderViews.size() + mFootViews.size()) > position) {
+                return super.getItemViewType(position);
+            } else {
+                return super.getItemViewType(position);
+            }
+        }else {
             return super.getItemViewType(position);
-        return mItemViewDelegateManager.getItemViewType(mDatas.get(position), position);
+        }
+//   if (mHeaderViews.size()>0 && mHeaderViews.size()>position  && mDatas.size()>0){
+//            
+//        }
+//        if (!useItemViewDelegateManager())
+//            return super.getItemViewType(position);
+//        return mItemViewDelegateManager.getItemViewType(mDatas.get(position), position);
     }
 
     @Override
@@ -93,7 +113,9 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public int getItemCount() {
         int itemCount = mDatas.size();
-        return itemCount;
+        int head = mHeaderViews.size();
+        int foot = mFootViews.size();
+        return itemCount+head+foot;
     }
 
     public List<T> getDatas() {
