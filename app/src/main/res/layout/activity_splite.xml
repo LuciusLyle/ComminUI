@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/dp_20"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/LView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Edit"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="切换输入框样式" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Show"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="切换显示模式" />
+
+        <com.lq.comnui.widget.SplitEditTextView
+            android:id="@+id/splitEdit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textColor="@color/Text333"
+            android:textSize="@dimen/sp_18"
+            app:borderColor="@color/application_color"
+            app:borderSize="@dimen/dp_1"
+            app:contentNumber="4"
+            app:contentShowMode="password"
+            app:corner_size="@dimen/dp_10"
+            app:cursorColor="@color/application_color"
+            app:cursorWidth="@dimen/dp_1"
+            app:inputBoxSquare="true"
+            app:inputBoxStyle="singleBox"
+            app:spaceSize="@dimen/dp_10"
+            app:underlineFocusColor="@color/application_color"
+            app:underlineNormalColor="@color/Text666" />
+
+        <com.lq.comnui.widget.SplitEditTextView
+            android:id="@+id/splitEdit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/sp_18"
+            app:borderSize="@dimen/dp_1"
+            app:corner_size="@dimen/dp_10"
+            app:borderColor="@color/Text666"
+            app:cursorColor="@color/application_color"
+            app:cursorHeight="@dimen/dp_20"
+            app:cursorWidth="@dimen/dp_1"
+            app:divisionLineColor="@color/Text666"
+            app:divisionLineSize="@dimen/dp_1"
+            app:inputBoxStyle="connectBox" />
+
+        <com.lq.comnui.widget.SplitEditTextView
+            android:id="@+id/splitEdit3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_20"
+            android:inputType="number"
+            android:textSelectHandleLeft="@color/application_color"
+            android:textSelectHandleRight="@color/application_color"
+            app:borderColor="@color/Text666"
+            app:borderSize="@dimen/dp_1"
+            app:contentNumber="5"
+            app:contentShowMode="text"
+            app:cursorColor="@color/application_color"
+            app:cursorWidth="@dimen/dp_1"
+            app:inputBoxStyle="underline"
+            app:spaceSize="@dimen/dp_20"
+            app:underlineFocusColor="@color/application_color"
+            app:underlineNormalColor="@color/Text666" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

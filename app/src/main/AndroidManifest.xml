@@ -31,6 +31,7 @@
         <activity android:name=".navigation.WeiboActivity"/>
         <activity android:name=".test.EditTextActivity"/>
         <activity android:name=".test.RecyclerViewActivity"/>
+        <activity android:name=".test.SpliteActivity"/>
         
     </application>
 

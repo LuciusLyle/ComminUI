@@ -15,6 +15,7 @@ import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
 import com.lq.comnui.anim.customAnim.AnimatorFactory;
 import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
+import com.lq.comnui.widget.SplitEditTextView;
 import com.lq.widget.view.CountdownView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AppCompatButton btn_app; //App信息
     AppCompatButton btn_device; //设备信息
     AppCompatButton btn_screen; //屏幕
+    AppCompatButton btn_splite; //分隔框
     PointView pointText; //红点
     boolean isNumber = false;
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_device = findViewById(R.id.btn_device);
         btn_screen = findViewById(R.id.btn_screen);
         pointText = findViewById(R.id.pointText);
+        btn_splite = findViewById(R.id.btn_splite);
 
         btn_dialog.setOnClickListener(this);
         cv_test_countdown.setOnClickListener(this);
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_app.setOnClickListener(this);
         btn_device.setOnClickListener(this);
         btn_screen.setOnClickListener(this);
+        btn_splite.setOnClickListener(this);
         findViewById(R.id.btn_adapter).setOnClickListener(this);
         findViewById(R.id.btn_edit).setOnClickListener(this);
         pointText.setOnClickListener(v -> {
@@ -96,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_edit:// 输入框
                 startActivity(new Intent(this,EditTextActivity.class));
+                break;
+            case R.id.btn_splite:// 分隔框
+                startActivity(new Intent(this, SpliteActivity.class));
                 break;
             
         }
