@@ -14,10 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lq.comnui.R;
+import com.lq.comnui.control.BetterRedPointViewControl;
 import com.lq.comnui.recyclerView.CommonAdapter;
 import com.lq.comnui.recyclerView.base.ViewHolder;
 import com.lq.comnui.recyclerView.wrapper.HeaderAndFooterWrapper;
 import com.lq.comnui.recyclerView.wrapper.LoadMoreWrapper;
+import com.lq.comnui.util.ComnToast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -169,10 +171,32 @@ public class RecyclerViewActivity extends AppCompatActivity implements SwipeRefr
         mAdapter = new CommonAdapter<JSONObject>(this, R.layout.item_rv_layout, mObjects) {
             @Override
             protected void convert(ViewHolder holder, JSONObject object, int position) {
+                TextView redpoint = holder.getView(R.id.redpoint);
+                redpoint.setText(position + "");
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Log.e("xxx","当前点击:"+position );
+                    }
+                });
+                //一个是拖拽的view 一个是拖拽的view布局
+                new BetterRedPointViewControl(mContext, redpoint, R.layout.comn_red_point, new BetterRedPointViewControl.DragStatusListener() {
+                    /**
+                     * 在范围内
+                     *
+                     */
+                    @Override
+                    public void inScope() {
+                        ComnToast.showMsg("在范围内");
+                    }
+
+                    /**
+                     * 在范围外
+                     *
+                     */
+                    @Override
+                    public void outScope() {
+                        ComnToast.showMsg("超出范围了");
                     }
                 });
             }
