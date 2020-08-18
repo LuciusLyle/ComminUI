@@ -11,11 +11,11 @@ import androidx.annotation.StringRes;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comn.BaseAdapter;
-import com.lq.comn.BaseDialog;
+import com.lq.comnui.base.BaseAdapter;
 import com.lq.comnui.R;
 import com.lq.comnui.aop.SingleClick;
-import com.lq.comnui.common.MyAdapter;
+import com.lq.comnui.base.BaseDialog;
+import com.lq.comnui.base.MyAdapter;
 import com.lq.comnui.widget.PasswordView;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.lq.comnui.common;
+package com.lq.comnui.base;
 
 import android.content.Context;
 import android.view.View;
@@ -7,8 +7,6 @@ import androidx.annotation.IntRange;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.lq.comn.BaseAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

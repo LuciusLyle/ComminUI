@@ -2,20 +2,18 @@ package com.lq.comnui.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.lq.comn.action.HandlerAction;
+import com.lq.comnui.action.HandlerAction;
 import com.lq.comnui.R;
 import com.lq.comnui.navigation.WeiboActivity;
 import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
 import com.lq.comnui.anim.customAnim.AnimatorFactory;
 import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
-import com.lq.comnui.widget.SplitEditTextView;
 import com.lq.widget.view.CountdownView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {

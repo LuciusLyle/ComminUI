@@ -1,4 +1,4 @@
-package com.lq.comn.action;
+package com.lq.comnui.action;
 
 import com.lq.comn.R;
 

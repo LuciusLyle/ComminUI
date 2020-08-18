@@ -1,4 +1,4 @@
-package com.lq.comn;
+package com.lq.comnui.base;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -33,10 +33,10 @@ import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.core.content.ContextCompat;
 
-import com.lq.comn.action.AnimAction;
-import com.lq.comn.action.ClickAction;
-import com.lq.comn.action.ContextAction;
-import com.lq.comn.action.HandlerAction;
+import com.lq.comnui.action.AnimAction;
+import com.lq.comnui.action.ClickAction;
+import com.lq.comnui.action.ContextAction;
+import com.lq.comnui.action.HandlerAction;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class BaseDialog extends AppCompatDialog implements ContextAction, Handle
     private List<OnDismissListener> mDismissListeners;
 
     public BaseDialog(Context context) {
-        this(context, R.style.BaseDialogStyle);
+        this(context, com.lq.comn.R.style.BaseDialogStyle);
     }
 
     public BaseDialog(Context context, int themeResId) {
@@ -374,7 +374,7 @@ public class BaseDialog extends AppCompatDialog implements ContextAction, Handle
         private View mContentView;
 
         /** 主题 */
-        private int mThemeId = R.style.BaseDialogStyle;
+        private int mThemeId = com.lq.comn.R.style.BaseDialogStyle;
         /** 动画 */
         private int mAnimations = AnimAction.NO_ANIM;
         /** 位置 */

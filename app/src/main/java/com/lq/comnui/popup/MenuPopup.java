@@ -10,11 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comn.BaseAdapter;
-import com.lq.comn.BasePopupWindow;
-import com.lq.comn.action.AnimAction;
+import com.lq.comnui.base.BaseAdapter;
+import com.lq.comnui.base.BasePopupWindow;
+import com.lq.comnui.action.AnimAction;
 import com.lq.comnui.R;
-import com.lq.comnui.common.MyAdapter;
+import com.lq.comnui.base.MyAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

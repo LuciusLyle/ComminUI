@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import com.lq.comn.BaseDialog;
+import com.lq.comnui.base.BaseDialog;
 import com.lq.comnui.R;
 import com.lq.comnui.bean.SelectBean;
 import com.lq.comnui.dialog.AddressDialog;

@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
-import com.lq.comn.BaseDialog;
 import com.lq.comnui.R;
 import com.lq.comnui.aop.SingleClick;
-import com.lq.comnui.common.MyAdapter;
+import com.lq.comnui.base.BaseDialog;
+import com.lq.comnui.base.MyAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

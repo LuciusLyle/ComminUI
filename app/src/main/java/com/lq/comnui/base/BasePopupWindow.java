@@ -1,4 +1,4 @@
-package com.lq.comn;
+package com.lq.comnui.base;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -32,10 +32,10 @@ import androidx.annotation.StyleRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.PopupWindowCompat;
 
-import com.lq.comn.action.AnimAction;
-import com.lq.comn.action.ClickAction;
-import com.lq.comn.action.ContextAction;
-import com.lq.comn.action.HandlerAction;
+import com.lq.comnui.action.AnimAction;
+import com.lq.comnui.action.ClickAction;
+import com.lq.comnui.action.ContextAction;
+import com.lq.comnui.action.HandlerAction;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;

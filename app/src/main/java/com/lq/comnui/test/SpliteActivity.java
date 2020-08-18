@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comn.action.HandlerAction;
+import com.lq.comnui.action.HandlerAction;
 import com.lq.comnui.R;
 import com.lq.comnui.listener.OnInputListener;
 import com.lq.comnui.util.ComnToast;

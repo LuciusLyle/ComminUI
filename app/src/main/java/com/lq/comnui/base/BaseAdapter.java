@@ -1,4 +1,4 @@
-package com.lq.comn;
+package com.lq.comnui.base;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comn.action.ContextAction;
+import com.lq.comnui.action.ContextAction;
 
 /**
  *    author : Android 轮子哥

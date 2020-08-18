@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import androidx.annotation.StringRes;
 
-import com.lq.comn.BaseDialog;
-import com.lq.comn.action.AnimAction;
+import com.lq.comnui.action.AnimAction;
 import com.lq.comnui.R;
+import com.lq.comnui.base.BaseDialog;
 
 /**
  *    author : Android 轮子哥

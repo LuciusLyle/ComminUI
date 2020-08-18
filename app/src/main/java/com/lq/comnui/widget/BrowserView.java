@@ -23,7 +23,7 @@ import android.webkit.WebViewClient;
 
 import androidx.fragment.app.FragmentActivity;
 
-import com.lq.comn.BaseDialog;
+import com.lq.comnui.base.BaseDialog;
 import com.lq.comnui.dialog.InputDialog;
 import com.lq.comnui.dialog.MessageDialog;
 import com.lq.comnui.dialog.ToastDialog;

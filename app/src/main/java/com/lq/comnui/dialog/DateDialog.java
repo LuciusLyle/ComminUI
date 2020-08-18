@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comn.BaseDialog;
 import com.lq.comnui.R;
 import com.lq.comnui.aop.SingleClick;
-import com.lq.comnui.common.MyAdapter;
+import com.lq.comnui.base.BaseDialog;
+import com.lq.comnui.base.MyAdapter;
 import com.lq.comnui.other.PickerLayoutManager;
 
 import java.text.SimpleDateFormat;
