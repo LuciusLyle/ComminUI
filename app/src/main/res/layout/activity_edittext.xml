@@ -5,6 +5,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:text="显示软键盘"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/hide"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:text="隐藏软键盘"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
     <com.lq.comnui.editText.ClearEditText
         style="@style/EditTextStyle"
         android:layout_width="match_parent"

@@ -29,7 +29,7 @@
         <activity android:name=".test.DeviceActivity"/>
         <activity android:name=".test.ScreenActivity"/>
         <activity android:name=".navigation.WeiboActivity"/>
-        <activity android:name=".test.EditTextActivity"/>
+        <activity android:name=".test.EditTextActivity" />
         <activity android:name=".test.RecyclerViewActivity"/>
         <activity android:name=".test.SpliteActivity"/>
         

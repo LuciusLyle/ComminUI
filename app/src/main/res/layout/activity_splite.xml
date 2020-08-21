@@ -67,7 +67,7 @@
             app:cursorWidth="@dimen/dp_1"
             app:divisionLineColor="@color/Text666"
             app:divisionLineSize="@dimen/dp_1"
-            app:inputBoxStyle="connectBox" />
+            app:inputBoxStyle="singleBox" />
 
         <com.lq.comnui.widget.SplitEditTextView
             android:id="@+id/splitEdit3"
