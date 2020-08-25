@@ -33,7 +33,7 @@ public final class WaitDialog {
             mMessageView = findViewById(R.id.tv_wait_message);
         }
 
-        public Builder setMessage(@StringRes int id) {
+        public Builder setMessage(@StringRes int id)   {
             return setMessage(getString(id));
         }
         public Builder setMessage(CharSequence text) {

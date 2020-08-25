@@ -1,4 +1,4 @@
-package com.lq.comnui.widget;
+package com.lq.comnui.webview;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

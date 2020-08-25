@@ -13,7 +13,7 @@ import com.lq.comnui.action.HandlerAction;
 import com.lq.comnui.R;
 import com.lq.comnui.listener.OnInputListener;
 import com.lq.comnui.util.ComnToast;
-import com.lq.comnui.widget.SplitEditTextView;
+import com.lq.comnui.editText.SplitEditTextView;
 
 public class SpliteActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
 

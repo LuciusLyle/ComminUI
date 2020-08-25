@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.lq.comnui.R;
+import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,7 +99,7 @@ public class WeiboActivity extends AppCompatActivity {
 //                    }
 //                })
                 .mode(EasyNavigationBar.NavigationMode.MODE_ADD)
-                .anim(Anim.DropOut)
+                .anim(new DropOutAnimator())
                 .animOnlyImage(true)
                 .build();
 

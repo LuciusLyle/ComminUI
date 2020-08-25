@@ -8,8 +8,6 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.lq.comnui.action.HandlerAction;
 import com.lq.comnui.R;
-import com.lq.comnui.util.AppUtil;
-import com.lq.comnui.util.ComnToast;
 
 public class AppActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
 
@@ -45,19 +43,19 @@ public class AppActivity extends AppCompatActivity implements View.OnClickListen
         int id = view.getId();
         switch (id){
             case R.id.btn_PackageName: //获取App包名
-                ComnToast.showMsg(AppUtil.getAppPackageName());
+                //ComnToast.showMsg(AppUtil.getAppPackageName());
                 break;
             case R.id.btn_Name: //获取App名称
-                ComnToast.showMsg(AppUtil.getAppName());
+                //ComnToast.showMsg(AppUtil.getAppName());
                 break;
             case R.id.btn_Path: //获取App路径
-                ComnToast.showMsg(AppUtil.getAppPath());
+                //ComnToast.showMsg(AppUtil.getAppPath());
                 break;
             case R.id.btn_VersionName: //获取App版本号
-                ComnToast.showMsg(AppUtil.getAppVersionName());
+                //ComnToast.showMsg(AppUtil.getAppVersionName());
                 break;
             case R.id.btn_VersionCode: //获取App版本码
-                ComnToast.showMsg(AppUtil.getAppVersionCode() + "");
+                //ComnToast.showMsg(AppUtil.getAppVersionCode() + "");
                 break;
         }
     }

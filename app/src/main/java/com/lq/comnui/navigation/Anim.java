@@ -1,3 +1,4 @@
+/*
 package com.lq.comnui.navigation;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -94,4 +95,4 @@ public enum Anim {
             throw new Error("Can not init Yoyo");
         }
     }
-}
+}*/

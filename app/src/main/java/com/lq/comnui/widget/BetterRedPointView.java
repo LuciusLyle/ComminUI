@@ -18,7 +18,8 @@ import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
 
 import com.lq.comnui.listener.DragViewStatusListener;
-import com.lq.comnui.util.SystemUtil;
+import com.lq.comnui.util.DensityUtil;
+import com.lq.comnui.util.StatusBarUtil;
 
 
 public class BetterRedPointView extends View {
@@ -150,11 +151,11 @@ public class BetterRedPointView extends View {
 
         tDragRadius = dragViewHeight;
         //中心圆的半径
-        tCenterRadius = SystemUtil.dp2px(context,8);
+        tCenterRadius = DensityUtil.dp2px(context,8);
         //最大拖拽距离
-        maxDistance = SystemUtil.dp2px(context,80);
+        maxDistance = DensityUtil.dp2px(context,80);
         //最小半径
-        minRadius = SystemUtil.dp2px(context,3);
+        minRadius = DensityUtil.dp2px(context,3);
 
         //布局参数
         params = new WindowManager.LayoutParams();
@@ -172,7 +173,7 @@ public class BetterRedPointView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         //rCenterPointF.x = w / 2;
         //  rCenterPointF.y = h / 2;
-       statusBarHeight = SystemUtil.getStatusBarHeight(this);
+       statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
 
     }
 

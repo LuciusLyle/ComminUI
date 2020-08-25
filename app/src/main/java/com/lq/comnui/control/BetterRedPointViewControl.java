@@ -17,7 +17,8 @@ import androidx.core.view.MotionEventCompat;
 
 import com.lq.comnui.R;
 import com.lq.comnui.listener.DragViewStatusListener;
-import com.lq.comnui.util.SystemUtil;
+import com.lq.comnui.util.DensityUtil;
+import com.lq.comnui.util.StatusBarUtil;
 import com.lq.comnui.widget.BetterRedPointView;
 
 public class BetterRedPointViewControl implements View.OnTouchListener, DragViewStatusListener {
@@ -71,7 +72,7 @@ public class BetterRedPointViewControl implements View.OnTouchListener, DragView
             }
 
             parent.requestDisallowInterceptTouchEvent(true);
-            statusHeight = SystemUtil.getStatusBarHeight(showView);
+            statusHeight = StatusBarUtil.getStatusBarHeight(showView);
             showView.setVisibility(View.INVISIBLE);
             dragView = LayoutInflater.from(context).inflate(mDragViewId,null,false);
             //获取文本内容

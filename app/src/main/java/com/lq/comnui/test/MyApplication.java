@@ -1,4 +1,4 @@
-package com.lq.comnui.common;
+package com.lq.comnui.test;
 
 import android.app.Application;
 import android.content.Context;

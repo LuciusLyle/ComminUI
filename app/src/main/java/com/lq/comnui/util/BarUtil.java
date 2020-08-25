@@ -25,8 +25,6 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.blankj.utilcode.util.Utils;
-
 import java.lang.reflect.Method;
 
 import static android.Manifest.permission.EXPAND_STATUS_BAR;
@@ -393,11 +391,11 @@ public class BarUtil {
      * 获取 ActionBar 高度
      * @return the action bar's height
      */
-    public static int getActionBarHeight() {
+    public static int getActionBarHeight(Context context) {
         TypedValue tv = new TypedValue();
-        if (Utils.getApp().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+        if (context.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
             return TypedValue.complexToDimensionPixelSize(
-                    tv.data, Utils.getApp().getResources().getDisplayMetrics()
+                    tv.data, context.getResources().getDisplayMetrics()
             );
         }
         return 0;
@@ -414,20 +412,20 @@ public class BarUtil {
      * @param isVisible True to set notification bar visible, false otherwise.
      */
     @RequiresPermission(EXPAND_STATUS_BAR)
-    public static void setNotificationBarVisibility(final boolean isVisible) {
+    public static void setNotificationBarVisibility(Context context,final boolean isVisible) {
         String methodName;
         if (isVisible) {
             methodName = (Build.VERSION.SDK_INT <= 16) ? "expand" : "expandNotificationsPanel";
         } else {
             methodName = (Build.VERSION.SDK_INT <= 16) ? "collapse" : "collapsePanels";
         }
-        invokePanels(methodName);
+        invokePanels(context,methodName);
     }
 
-    private static void invokePanels(final String methodName) {
+    private static void invokePanels(Context context,final String methodName) {
         try {
             @SuppressLint("WrongConstant")
-            Object service = Utils.getApp().getSystemService("statusbar");
+            Object service = context.getSystemService("statusbar");
             @SuppressLint("PrivateApi")
             Class<?> statusBarManager = Class.forName("android.app.StatusBarManager");
             Method expand = statusBarManager.getMethod(methodName);
@@ -456,32 +454,22 @@ public class BarUtil {
         }
     }
 
-    /**
-     * Set the navigation bar's visibility.
-     * 设置导航栏是否可见
-     * @param activity  The activity.
-     * @param isVisible True to set navigation bar visible, false otherwise.
-     */
-    public static void setNavBarVisibility(@NonNull final Activity activity, boolean isVisible) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) return;
-        setNavBarVisibility(activity.getWindow(), isVisible);
-
-    }
 
     /**
-     * Set the navigation bar's visibility.
+     *  设置导航栏是否可见
      *
-     * @param window    The window.
+     * @param activity    The window.
      * @param isVisible True to set navigation bar visible, false otherwise.
      */
-    public static void setNavBarVisibility(@NonNull final Window window, boolean isVisible) {
+    public static void setNavBarVisibility(Activity activity, boolean isVisible) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) return;
-        final ViewGroup decorView = (ViewGroup) window.getDecorView();
+        
+        final ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
         for (int i = 0, count = decorView.getChildCount(); i < count; i++) {
             final View child = decorView.getChildAt(i);
             final int id = child.getId();
             if (id != View.NO_ID) {
-                String resourceEntryName = Utils.getApp()
+                String resourceEntryName = activity
                         .getResources()
                         .getResourceEntryName(id);
                 if ("navigationBarBackground".equals(resourceEntryName)) {
@@ -507,24 +495,13 @@ public class BarUtil {
      * @return {@code true}: yes<br>{@code false}: no
      */
     public static boolean isNavBarVisible(@NonNull final Activity activity) {
-        return isNavBarVisible(activity.getWindow());
-    }
-
-    /**
-     * Return whether the navigation bar visible.
-     * <p>Call it in onWindowFocusChanged will get right result.</p>
-     *
-     * @param window The window.
-     * @return {@code true}: yes<br>{@code false}: no
-     */
-    public static boolean isNavBarVisible(@NonNull final Window window) {
         boolean isVisible = false;
-        ViewGroup decorView = (ViewGroup) window.getDecorView();
+        ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
         for (int i = 0, count = decorView.getChildCount(); i < count; i++) {
             final View child = decorView.getChildAt(i);
             final int id = child.getId();
             if (id != View.NO_ID) {
-                String resourceEntryName = Utils.getApp()
+                String resourceEntryName = activity
                         .getResources()
                         .getResourceEntryName(id);
                 if ("navigationBarBackground".equals(resourceEntryName)
@@ -590,9 +567,9 @@ public class BarUtil {
      * 判断是否支持导航栏
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isSupportNavBar() {
+    public static boolean isSupportNavBar(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            WindowManager wm = (WindowManager) Utils.getApp().getSystemService(Context.WINDOW_SERVICE);
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             if (wm == null) return false;
             Display display = wm.getDefaultDisplay();
             Point size = new Point();
@@ -601,7 +578,7 @@ public class BarUtil {
             display.getRealSize(realSize);
             return realSize.y != size.y || realSize.x != size.x;
         }
-        boolean menu = ViewConfiguration.get(Utils.getApp()).hasPermanentMenuKey();
+        boolean menu = ViewConfiguration.get(context).hasPermanentMenuKey();
         boolean back = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_BACK);
         return !menu && !back;
     }

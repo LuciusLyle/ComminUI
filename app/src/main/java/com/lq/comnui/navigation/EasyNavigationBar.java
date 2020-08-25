@@ -25,6 +25,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.lq.comnui.R;
+import com.lq.comnui.anim.customAnim.AnimatorFactory;
+import com.lq.comnui.anim.customAnim.BaseAnimator;
+import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
 import com.lq.comnui.viewpage.CustomViewPager;
 
 import java.lang.annotation.Retention;
@@ -82,7 +85,8 @@ public class EasyNavigationBar extends LinearLayout {
     private FragmentManager fragmentManager;
 
     //Tab点击动画效果
-    private Techniques anim = null;
+    //private Techniques anim = null;
+    private BaseAnimator anim = null;
     //ViewPager切换动画
     private boolean smoothScroll = false;
     //图标大小
@@ -1146,9 +1150,11 @@ public class EasyNavigationBar extends LinearLayout {
             if (i == position) {
                 if (anim != null && showAnim)
                     if (animOnlyImage){ //只赋予图片动画
-                        YoYo.with(anim).duration(300).playOn(tabList.get(i).findViewById(R.id.tab_icon_iv));
+                        //YoYo.with(anim).duration(300).playOn(tabList.get(i).findViewById(R.id.tab_icon_iv));
+                        anim.setDuration(300).start(tabList.get(i).findViewById(R.id.tab_icon_iv));
                     }else { //赋予整个tab动画
-                        YoYo.with(anim).duration(300).playOn(tabList.get(i));
+                        //YoYo.with(anim).duration(300).playOn(tabList.get(i));
+                        anim.setDuration(300).start(tabList.get(i));
                     }
                 switch (contentType) {
                     case TabContentType.TYPE_NORMAL:
@@ -1426,12 +1432,14 @@ public class EasyNavigationBar extends LinearLayout {
         return this;
     }
 
-    public EasyNavigationBar anim(Anim anim) {
-        if (anim != null) {
-            this.anim = anim.getYoyo();
-        } else {
-            this.anim = null;
-        }
+    public EasyNavigationBar anim( BaseAnimator  anim) {
+        this.anim=anim;
+        //this.anim =  new AnimatorFactory().createAnima(DropOutAnimator.class,view).setDuration(2000).start();
+//        if (anim != null) {
+//            this.anim = anim.getYoyo();
+//        } else {
+//            this.anim = null;
+//        }
         return this;
     }
 
@@ -1530,10 +1538,13 @@ public class EasyNavigationBar extends LinearLayout {
     public FragmentManager getFragmentManager() {
         return fragmentManager;
     }
-
-    public Techniques getAnim() {
+    public BaseAnimator getAnim() {
         return anim;
     }
+    
+//    public Techniques getAnim() {
+//        return anim;
+//    }
 
     public boolean isSmoothScroll() {
         return smoothScroll;

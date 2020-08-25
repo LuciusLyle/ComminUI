@@ -1,6 +1,7 @@
 package com.lq.comnui.viewpage;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.fragment.app.Fragment;
@@ -15,9 +16,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
  */
 public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
-    private String[] titles;
+    private ArrayList<String> titles;
     
-    public TabFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragments, String[] titles) {
+    public TabFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragments, ArrayList<String> titles) {
         super(fm);
         this.fragments = fragments;
         this.titles = titles;
@@ -35,8 +36,8 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        if (titles != null && titles.length > position) {
-            return titles[position];
+        if (titles != null && titles.size() > position) {
+            return titles.get(position);
         } else {
             return "";
         }

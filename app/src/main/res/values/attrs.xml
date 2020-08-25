@@ -162,4 +162,109 @@
         <attr name="underlineFocusColor" format="reference|color" />
     </declare-styleable>
 
+
+
+    <declare-styleable name="LetterView">
+        <attr name="lv_background" format="color"/>
+        <attr name="lv_showBackground" format="boolean"/>
+        <attr name="lv_textSize" format="dimension"/>
+        <attr name="lv_textColor" format="color"/>
+        <attr name="lv_textColorChoose" format="color"/>
+    </declare-styleable>
+
+    <!-- 仿 ios 开关按钮 -->
+    <declare-styleable name="SwitchButton">
+        <!-- 是否选中 -->
+        <attr name="android:checked" />
+        <!-- 是否禁用 -->
+        <attr name="android:enabled" />
+    </declare-styleable>
+
+    <!-- 正则表达式编辑框 -->
+    <declare-styleable name="RegexEditText">
+        <!-- 正则输入限制 -->
+        <attr name="inputRegex" format="string" />
+        <!-- 常用正则类型 -->
+        <attr name="regexType" >
+            <!-- 手机号（只能以 1 开头） -->
+            <enum name="mobile" value="0x01" />
+            <!-- 中文（普通的中文字符） -->
+            <enum name="chinese" value="0x02" />
+            <!-- 英文（大写和小写的英文） -->
+            <enum name="english" value="0x03" />
+            <!-- 整数（非 0 开头的数字） -->
+            <enum name="count" value="0x04" />
+            <!-- 用户名（中文、英文、数字） -->
+            <enum name="name" value="0x05" />
+            <!-- 非空格字符 -->
+            <enum name="nonnull" value="0x06" />
+        </attr>
+    </declare-styleable>
+
+    <!-- 设置栏 -->
+    <declare-styleable name="SettingBar">
+        <!-- 左边 -->
+        <attr name="bar_leftText" format="string"/>
+        <attr name="bar_leftHint" format="string"/>
+        <attr name="bar_leftIcon" format="reference" />
+        <attr name="bar_leftColor" format="color" />
+        <attr name="bar_leftSize" format="dimension" />
+        <!-- 右边 -->
+        <attr name="bar_rightText" format="string" />
+        <attr name="bar_rightHint" format="string"/>
+        <attr name="bar_rightIcon" format="reference" />
+        <attr name="bar_rightColor" format="color" />
+        <attr name="bar_rightSize" format="dimension" />
+        <!-- 分割线 -->
+        <attr name="bar_lineVisible" format="boolean" />
+        <attr name="bar_lineColor" format="reference|color" />
+        <attr name="bar_lineSize" format="dimension" />
+        <attr name="bar_lineMargin" format="dimension" />
+    </declare-styleable>
+
+    <!-- 自定义 ViewStub -->
+    <declare-styleable name="CustomViewStub">
+        <!-- 布局 id -->
+        <attr name="android:layout" />
+    </declare-styleable>
+
+    <!-- 缩放的 ImageView -->
+    <declare-styleable name="ScaleImageView">
+        <!-- 缩放比例 -->
+        <attr name="scaleRatio" format="float" />
+    </declare-styleable>
+
+    <!-- 按照比例显示的 FrameLayout -->
+    <declare-styleable name="RatioFrameLayout">
+        <!-- 宽高比例 -->
+        <attr name="sizeRatio" format="float" />
+    </declare-styleable>
+
+    <!-- 带红点文本 -->
+    <declare-styleable name="PointText">
+        <!-- 文字 -->
+        <attr name="pointStr" format="string"/>
+        <attr name="pointPadding" format="dimension" />
+        <attr name="pointColor" format="color"/>
+        <attr name="pointSize" format="dimension" />
+        <!-- 红点文字 -->
+        <attr name="pointRed" format="color" />
+        <attr name="pointRedText" format="string" />
+        <attr name="pointRedSize" format="dimension" />
+        <attr name="pointRedBg" format="reference" />
+        <!-- 图片 -->
+        <attr name="iconTop" format="reference" />
+        <attr name="iconBottom" format="reference" />
+        <attr name="iconLeft" format="reference" />
+        <attr name="iconRight" format="reference" />
+        <!-- 常用红点类型 -->
+        <attr name="pointType" >
+            <!-- 手机号（只能以 1 开头） -->
+            <enum name="point" value="0x01" />
+            <!-- 中文（普通的中文字符） -->
+            <enum name="number" value="0x02" />
+        </attr>
+    </declare-styleable>
+
+
 </resources>

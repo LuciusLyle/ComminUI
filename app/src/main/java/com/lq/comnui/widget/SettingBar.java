@@ -14,12 +14,13 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.lq.comnui.R;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
-import com.lq.widget.R;
 
 /**
  *    author : Android 轮子哥
@@ -80,7 +81,7 @@ public final class SettingBar extends FrameLayout {
         addView(mLineView, 1, new LayoutParams(LayoutParams.MATCH_PARENT, 1, Gravity.BOTTOM));
 
         final TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.SettingBar);
-
+        
         // 文本设置
         if (array.hasValue(R.styleable.SettingBar_bar_leftText)) {
             setLeftText(array.getString(R.styleable.SettingBar_bar_leftText));

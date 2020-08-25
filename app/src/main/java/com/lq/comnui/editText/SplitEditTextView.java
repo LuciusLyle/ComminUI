@@ -1,4 +1,4 @@
-package com.lq.comnui.widget;
+package com.lq.comnui.editText;
 
 import android.content.Context;
 import android.content.res.Resources;

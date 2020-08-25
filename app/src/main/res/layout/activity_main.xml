@@ -217,11 +217,11 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <com.lq.widget.view.CountdownView
+            <com.lq.comnui.widget.CountdownView
                 android:id="@+id/cv_test_countdown"
                 style="@style/CountdownViewStyle"/>
 
-            <com.lq.widget.view.CountdownView
+            <com.lq.comnui.widget.CountdownView
                 style="@style/CountdownViewStyle"
                 android:enabled="false"/>
 

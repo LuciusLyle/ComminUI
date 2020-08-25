@@ -55,10 +55,13 @@ dependencies {
 //    implementation 'com.hjq:xxpermissions:6.2'
 //    // 网络请求框架：https://github.com/getActivity/EasyHttp
 //    implementation 'com.hjq:http:5.0'
+    
     // 工具类
-    implementation 'com.blankj:utilcode:1.23.5'
-//
-    implementation 'com.daimajia.easing:library:2.0@aar'
-    implementation 'com.daimajia.androidanimations:library:2.2@aar'
+    //implementation 'com.blankj:utilcode:1.23.5'
+
+    
+    //动画参考
+    //implementation 'com.daimajia.easing:library:2.0@aar'
+    //implementation 'com.daimajia.androidanimations:library:2.2@aar'
 
 }

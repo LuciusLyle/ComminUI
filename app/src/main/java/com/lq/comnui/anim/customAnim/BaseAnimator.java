@@ -18,19 +18,15 @@ public abstract class BaseAnimator {
     private long mDuration = DURATION;
     
     private AnimatorSet mAnimatorSet = new AnimatorSet();
-
-    private View targetView;
+    
     protected abstract void prepare(View target);
     
-//    public  BaseAnimator(){
-//    }
-    public  BaseAnimator(View targetView){
-        this.targetView = targetView;
+
+    public  BaseAnimator(){
+       
     }
-//    private void setsetTargetView(View targetView){
-//        this.targetView = targetView;
-//    }
-    public BaseAnimator setTarget() {
+
+    public BaseAnimator setTarget(View targetView) {
         reset(targetView);
         prepare(targetView);
         return this;
@@ -50,9 +46,10 @@ public abstract class BaseAnimator {
         target.setRotationY( 0);
         target.setRotationX( 0);
     }
+    
 
-    public void start() {
-        setTarget();
+    public void start(View targetView) {
+        setTarget(targetView);
         mAnimatorSet.setDuration(mDuration);
         mAnimatorSet.start();
     }

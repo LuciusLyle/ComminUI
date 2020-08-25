@@ -6,9 +6,10 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.AttributeSet;
 
+import com.lq.comnui.R;
+
 import androidx.appcompat.widget.AppCompatEditText;
 
-import com.lq.widget.R;
 
 import java.util.regex.Pattern;
 

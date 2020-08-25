@@ -32,7 +32,7 @@
             android:layout_marginTop="@dimen/dp_20"
             android:text="切换显示模式" />
 
-        <com.lq.comnui.widget.SplitEditTextView
+        <com.lq.comnui.editText.SplitEditTextView
             android:id="@+id/splitEdit1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
             app:underlineFocusColor="@color/application_color"
             app:underlineNormalColor="@color/Text666" />
 
-        <com.lq.comnui.widget.SplitEditTextView
+        <com.lq.comnui.editText.SplitEditTextView
             android:id="@+id/splitEdit2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
             app:divisionLineSize="@dimen/dp_1"
             app:inputBoxStyle="connectBox" />
 
-        <com.lq.comnui.widget.SplitEditTextView
+        <com.lq.comnui.editText.SplitEditTextView
             android:id="@+id/splitEdit3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"

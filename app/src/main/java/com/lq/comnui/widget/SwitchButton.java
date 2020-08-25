@@ -18,9 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
+import com.lq.comnui.R;
+
 import androidx.annotation.Nullable;
 
-import com.lq.widget.R;
 
 /**
  *    author : Android 轮子哥

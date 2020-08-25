@@ -12,9 +12,6 @@ import com.lq.comnui.anim.customAnim.BaseAnimator;
  */
 public class PulseAnimator extends BaseAnimator {
     
-    public PulseAnimator(View targetView) {
-        super(targetView);
-    }
 
     @Override
     protected void prepare(View target) {

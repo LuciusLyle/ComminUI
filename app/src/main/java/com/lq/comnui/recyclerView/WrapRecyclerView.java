@@ -1,4 +1,4 @@
-package com.lq.widget.layout;
+package com.lq.comnui.recyclerView;
 
 import android.content.Context;
 import android.util.AttributeSet;

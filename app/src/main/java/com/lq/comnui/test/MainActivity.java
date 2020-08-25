@@ -14,7 +14,7 @@ import com.lq.comnui.util.ComnToast;
 import com.lq.comnui.widget.PointView;
 import com.lq.comnui.anim.customAnim.AnimatorFactory;
 import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
-import com.lq.widget.view.CountdownView;
+import com.lq.comnui.widget.CountdownView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, HandlerAction {
     
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
         switch (id){
             case R.id.btn_bar: //状态栏
-                new AnimatorFactory().createAnima(DropOutAnimator.class,view).setDuration(2000).start();
+                new AnimatorFactory().createAnima(DropOutAnimator.class).setDuration(2000).start(view);
                // startActivity(new Intent(this,BarActivity1.class));
                 break;
             case R.id.btn_dialog: //弹框

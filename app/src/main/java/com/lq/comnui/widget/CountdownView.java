@@ -1,4 +1,4 @@
-package com.lq.widget.view;
+package com.lq.comnui.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.lq.widget.view;
+package com.lq.comnui.widget;
 
 import android.content.Context;
 import android.text.Editable;

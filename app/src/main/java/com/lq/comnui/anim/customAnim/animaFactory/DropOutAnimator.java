@@ -6,7 +6,10 @@ import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
+import com.daimajia.easing.Skill;
+import com.lq.comnui.anim.Glider;
 import com.lq.comnui.anim.customAnim.BaseAnimator;
+import com.lq.comnui.anim.customAnim.easingFactory.bounce.BounceEaseOut;
 
 /**
  * @author
@@ -15,17 +18,24 @@ import com.lq.comnui.anim.customAnim.BaseAnimator;
  */
 public class DropOutAnimator extends BaseAnimator {
     
-    public DropOutAnimator(View targetView) {
-        super(targetView);
-    }
 
     @Override
     protected void prepare(View target) {
         int distance = target.getTop() + target.getHeight();
         getAnimatorAgent().playTogether(
-                test(target)
-                );
+                ObjectAnimator.ofFloat(target, "alpha", 0, 1),
+                Glider.glide(BounceEaseOut.class, getDuration(), ObjectAnimator.ofFloat(target, "translationY", -distance, 0))
+        );
     }
+    
+
+//    @Override
+//    protected void prepare(View target) {
+//        int distance = target.getTop() + target.getHeight();
+//        getAnimatorAgent().playTogether(
+//                test(target)
+//                );
+//    }
     
     private ValueAnimator test(View view){
         new ArgbEvaluator();
