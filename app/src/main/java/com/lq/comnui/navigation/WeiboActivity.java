@@ -168,7 +168,7 @@ public class WeiboActivity extends AppCompatActivity {
 
 
     private void startAnimation() {
-        mHandler.post(new Runnable() {
+        mHandler.post(new Runnable() {  
             @Override
             public void run() {
                 try {

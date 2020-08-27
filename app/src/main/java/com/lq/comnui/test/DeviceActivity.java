@@ -46,25 +46,18 @@ public class DeviceActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.btn_VersionName: //获取设备系统版本号
-                ComnToast.showMsg(DeviceUtil.getSDKVersionName());
-                break;
-            case R.id.btn_VersionCode: //获取设备系统版本码
-                ComnToast.showMsg(DeviceUtil.getSDKVersionCode() + "");
-                break;
-            case R.id.btn_AndroidID: //获取设备 AndroidID
-                ComnToast.showMsg(DeviceUtil.getAndroidID());
-                break;
-            case R.id.btn_Address: //获取设备 MAC 地址
-                ComnToast.showMsg(DeviceUtil.getMacAddress());
-                break;
-            case R.id.btn_Manufacturer: //获取设备厂商
-                ComnToast.showMsg(DeviceUtil.getManufacturer());
-                break;
-            case R.id.btn_Model: //获取设备型号
-                ComnToast.showMsg(DeviceUtil.getModel());
-                break;
+        if (id == R.id.btn_VersionName) { //获取设备系统版本号
+            //ComnToast.showMsg(DeviceUtil.getSDKVersionName());
+        } else if (id == R.id.btn_VersionCode) { //获取设备系统版本码
+            //ComnToast.showMsg(DeviceUtil.getSDKVersionCode() + "");
+        } else if (id == R.id.btn_AndroidID) { //获取设备 AndroidID
+           // ComnToast.showMsg(DeviceUtil.getAndroidID());
+        } else if (id == R.id.btn_Address) { //获取设备 MAC 地址
+          //  ComnToast.showMsg(DeviceUtil.getMacAddress());
+        } else if (id == R.id.btn_Manufacturer) { //获取设备厂商
+          //  ComnToast.showMsg(DeviceUtil.getManufacturer());
+        } else if (id == R.id.btn_Model) { //获取设备型号
+          //  ComnToast.showMsg(DeviceUtil.getModel());
         }
     }
 }

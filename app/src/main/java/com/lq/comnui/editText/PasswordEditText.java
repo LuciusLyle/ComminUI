@@ -10,10 +10,11 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.lq.comnui.R;
+
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import com.lq.widget.R;
 
 /**
  *    author : Android 轮子哥

@@ -196,21 +196,17 @@ public final class TimeDialog {
         @SingleClick
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_ui_confirm:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onSelected(getDialog(), mHourManager.getPickedPosition(), mMinuteManager.getPickedPosition(), mSecondManager.getPickedPosition());
-                    }
-                    break;
-                case R.id.tv_ui_cancel:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onCancel(getDialog());
-                    }
-                    break;
-                default:
-                    break;
+            int id = v.getId();
+            if (id == R.id.tv_ui_confirm) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onSelected(getDialog(), mHourManager.getPickedPosition(), mMinuteManager.getPickedPosition(), mSecondManager.getPickedPosition());
+                }
+            } else if (id == R.id.tv_ui_cancel) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onCancel(getDialog());
+                }
             }
         }
     }

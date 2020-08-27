@@ -72,37 +72,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.btn_bar: //状态栏
-                new AnimatorFactory().createAnima(DropOutAnimator.class).setDuration(2000).start(view);
-               // startActivity(new Intent(this,BarActivity1.class));
-                break;
-            case R.id.btn_dialog: //弹框
-                startActivity(new Intent(this,DialogActivity.class));
-                break;
-            case R.id.btn_app: //App
-                startActivity(new Intent(this,AppActivity.class));
-                break;
-            case R.id.btn_device: // 设备信息
-                startActivity(new Intent(this,DeviceActivity.class));
-                break;
-            case R.id.btn_screen: //屏幕
-                startActivity(new Intent(this,ScreenActivity.class));
-                break;
-            case R.id.cv_test_countdown: // 发送验证码
-//                cv_test_countdown.start();
-                ComnToast.showMsg("xxxxxx");
-                break;
-            case R.id.btn_adapter:// 自定义adapter
-                startActivity(new Intent(this, RecyclerViewActivity.class));
-                break;
-            case R.id.btn_edit:// 输入框
-                startActivity(new Intent(this,EditTextActivity.class));
-                break;
-            case R.id.btn_splite:// 分隔框
-                startActivity(new Intent(this, SpliteActivity.class));
-                break;
-            
+        if (id == R.id.btn_bar) { //状态栏
+            new AnimatorFactory().createAnima(DropOutAnimator.class).setDuration(2000).start(view);
+            // startActivity(new Intent(this,BarActivity1.class));
+        } else if (id == R.id.btn_dialog) { //弹框
+            startActivity(new Intent(this, DialogActivity.class));
+        } else if (id == R.id.btn_app) { //App
+            startActivity(new Intent(this, AppActivity.class));
+        } else if (id == R.id.btn_device) { // 设备信息
+            startActivity(new Intent(this, DeviceActivity.class));
+        } else if (id == R.id.btn_screen) { //屏幕
+            startActivity(new Intent(this, ScreenActivity.class));
+        } else if (id == R.id.cv_test_countdown) { // 发送验证码
+            //                cv_test_countdown.start();
+            ComnToast.showMsg("xxxxxx");
+        } else if (id == R.id.btn_adapter) {// 自定义adapter
+            startActivity(new Intent(this, RecyclerViewActivity.class));
+        } else if (id == R.id.btn_edit) {// 输入框
+            startActivity(new Intent(this, EditTextActivity.class));
+        } else if (id == R.id.btn_splite) {// 分隔框
+            startActivity(new Intent(this, SpliteActivity.class));
         }
     }
 }

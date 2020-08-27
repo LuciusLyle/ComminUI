@@ -56,21 +56,17 @@ public final class MessageDialog {
         @SingleClick
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_ui_confirm:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onConfirm(getDialog());
-                    }
-                    break;
-                case R.id.tv_ui_cancel:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onCancel(getDialog());
-                    }
-                    break;
-                default:
-                    break;
+            int id = v.getId();
+            if (id == R.id.tv_ui_confirm) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onConfirm(getDialog());
+                }
+            } else if (id == R.id.tv_ui_cancel) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onCancel(getDialog());
+                }
             }
         }
     }

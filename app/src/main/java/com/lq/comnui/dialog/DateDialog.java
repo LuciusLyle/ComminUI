@@ -220,21 +220,17 @@ public final class DateDialog {
         @SingleClick
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_ui_confirm:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onSelected(getDialog(), mStartYear + mYearManager.getPickedPosition(), mMonthManager.getPickedPosition() + 1, mDayManager.getPickedPosition() + 1);
-                    }
-                    break;
-                case R.id.tv_ui_cancel:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onCancel(getDialog());
-                    }
-                    break;
-                default:
-                    break;
+            int id = v.getId();
+            if (id == R.id.tv_ui_confirm) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onSelected(getDialog(), mStartYear + mYearManager.getPickedPosition(), mMonthManager.getPickedPosition() + 1, mDayManager.getPickedPosition() + 1);
+                }
+            } else if (id == R.id.tv_ui_cancel) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onCancel(getDialog());
+                }
             }
         }
 

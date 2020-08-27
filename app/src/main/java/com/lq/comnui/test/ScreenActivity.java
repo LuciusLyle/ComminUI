@@ -46,41 +46,34 @@ public class ScreenActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.btn_ScreenWidth: //获取屏幕的宽度（单位：px）
-                ComnToast.showMsg(ScreenUtil.getScreenWidth() + "");
-                break;
-            case R.id.btn_ScreenHeight: //获取屏幕的高度（单位：px）
-                ComnToast.showMsg(ScreenUtil.getScreenHeight() + "");
-                break;
-            case R.id.btn_FullScreen: //切换屏幕为全屏与否状态
-                if (ScreenUtil.isFullScreen(this)){
-                    ScreenUtil.setNonFullScreen(this);
-                }else {
-                    ScreenUtil.setFullScreen(this);
-                }
-                break;
-            case R.id.btn_Landscape: //设置屏幕为横屏
-                if (ScreenUtil.isLandscape()){
-                    ComnToast.showMsg("当前已是横屏");
-                }else {
-                    ScreenUtil.setLandscape(this);
-                }
-                break;
-            case R.id.btn_Portrait: //设置屏幕为竖屏
-                if (ScreenUtil.isPortrait()){
-                    ComnToast.showMsg("当前已是竖屏");
-                }else {
-                    ScreenUtil.setPortrait(this);
-                }
-                break;
-            case R.id.btn_Tablet: //判断是否是平板
-                if (ScreenUtil.isTablet()){
-                    ComnToast.showMsg("当前设备为平板");
-                }else {
-                    ComnToast.showMsg("当前设备不为平板");
-                }
-                break;
+        if (id == R.id.btn_ScreenWidth) { //获取屏幕的宽度（单位：px）
+            ComnToast.showMsg(ScreenUtil.getScreenWidth(this) + "");
+        } else if (id == R.id.btn_ScreenHeight) { //获取屏幕的高度（单位：px）
+            //ComnToast.showMsg(ScreenUtil.getScreenHeight() + "");
+        } else if (id == R.id.btn_FullScreen) { //切换屏幕为全屏与否状态
+            if (ScreenUtil.isFullScreen(this)) {
+                ScreenUtil.setNonFullScreen(this);
+            } else {
+                ScreenUtil.setFullScreen(this);
+            }
+        } else if (id == R.id.btn_Landscape) { //设置屏幕为横屏
+            if (ScreenUtil.isLandscape(this)) {
+                ComnToast.showMsg("当前已是横屏");
+            } else {
+                ScreenUtil.setLandscape(this);
+            }
+        } else if (id == R.id.btn_Portrait) { //设置屏幕为竖屏
+            if (ScreenUtil.isPortrait(this)) {
+                ComnToast.showMsg("当前已是竖屏");
+            } else {
+                ScreenUtil.setPortrait(this);
+            }
+        } else if (id == R.id.btn_Tablet) { //判断是否是平板
+            if (ScreenUtil.isTablet(this)) {
+                ComnToast.showMsg("当前设备为平板");
+            } else {
+                ComnToast.showMsg("当前设备不为平板");
+            }
         }
     }
 }

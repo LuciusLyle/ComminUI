@@ -1,9 +1,10 @@
 
 package com.lq.comnui.anim.customAnim.easingFactory.back;
 
-import com.daimajia.easing.BaseEasingMethod;
 
-public class BackEaseOut extends BaseEasingMethod{
+import com.lq.comnui.anim.BaseEasingMethod;
+
+public class BackEaseOut extends BaseEasingMethod {
 
     private float s = 1.70158f;
 

@@ -19,7 +19,7 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresPermission;
 
-import com.blankj.utilcode.util.Utils;
+
 
 import static android.Manifest.permission.WRITE_SETTINGS;
 
@@ -34,8 +34,8 @@ public class ScreenUtil {
      * 获取屏幕的宽度（单位：px）
      * @return the width of screen, in pixel
      */
-    public static int getScreenWidth() {
-        WindowManager wm = (WindowManager) Utils.getApp().getSystemService(Context.WINDOW_SERVICE);
+    public static int getScreenWidth(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Point point = new Point();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             //noinspection ConstantConditions
@@ -52,8 +52,8 @@ public class ScreenUtil {
      * 获取屏幕的高度（单位：px）
      * @return the height of screen, in pixel
      */
-    public static int getScreenHeight() {
-        WindowManager wm = (WindowManager) Utils.getApp().getSystemService(Context.WINDOW_SERVICE);
+    public static int getScreenHeight(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Point point = new Point();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             //noinspection ConstantConditions
@@ -152,8 +152,8 @@ public class ScreenUtil {
      * 判断是否横屏
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isLandscape() {
-        return Utils.getApp().getResources().getConfiguration().orientation
+    public static boolean isLandscape(Context context) {
+        return context.getResources().getConfiguration().orientation
                 == Configuration.ORIENTATION_LANDSCAPE;
     }
 
@@ -162,8 +162,8 @@ public class ScreenUtil {
      * 判断是否竖屏
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isPortrait() {
-        return Utils.getApp().getResources().getConfiguration().orientation
+    public static boolean isPortrait(Context context) {
+        return context.getResources().getConfiguration().orientation
                 == Configuration.ORIENTATION_PORTRAIT;
     }
 
@@ -237,9 +237,9 @@ public class ScreenUtil {
      * 判断是否锁屏
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isScreenLock() {
+    public static boolean isScreenLock(Context context) {
         KeyguardManager km =
-                (KeyguardManager) Utils.getApp().getSystemService(Context.KEYGUARD_SERVICE);
+                (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         //noinspection ConstantConditions
         return km.inKeyguardRestrictedInputMode();
     }
@@ -251,9 +251,9 @@ public class ScreenUtil {
      * @param duration The duration.
      */
     @RequiresPermission(WRITE_SETTINGS)
-    public static void setSleepDuration(final int duration) {
+    public static void setSleepDuration(Context context,final int duration) {
         Settings.System.putInt(
-                Utils.getApp().getContentResolver(),
+                context.getContentResolver(),
                 Settings.System.SCREEN_OFF_TIMEOUT,
                 duration
         );
@@ -264,10 +264,10 @@ public class ScreenUtil {
      * 获取进入休眠时长
      * @return the duration of sleep.
      */
-    public static int getSleepDuration() {
+    public static int getSleepDuration(Context context) {
         try {
             return Settings.System.getInt(
-                    Utils.getApp().getContentResolver(),
+                    context.getContentResolver(),
                     Settings.System.SCREEN_OFF_TIMEOUT
             );
         } catch (Settings.SettingNotFoundException e) {
@@ -281,8 +281,8 @@ public class ScreenUtil {
      * isTablet
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isTablet() {
-        return (Utils.getApp().getResources().getConfiguration().screenLayout
+    public static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
                 & Configuration.SCREENLAYOUT_SIZE_MASK)
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }

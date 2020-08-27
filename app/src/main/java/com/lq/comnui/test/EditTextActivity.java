@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.lq.comnui.R;
-import com.lq.comnui.listener.SoftKeyBoardListener;
+//import com.lq.comnui.listener.SoftKeyBoardListener;
 import com.lq.comnui.util.ComnToast;
 
 import androidx.annotation.Nullable;
@@ -44,18 +44,15 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.show: //显示软键盘
-                if (isShow){
-                    hideKeyboard(show);
-                }else {
-                    showKeyboard(show);
-                }
-//                showKeyboard(show);
-                break;
-            case R.id.hide: //隐藏软键盘
-//                hideKeyboard(hide);
-                break;
+        if (id == R.id.show) { //显示软键盘
+            if (isShow) {
+                hideKeyboard(show);
+            } else {
+                showKeyboard(show);
+            }
+            //                showKeyboard(show);
+        } else if (id == R.id.hide) { //隐藏软键盘
+            //                hideKeyboard(hide);
         }
     }
 
@@ -78,19 +75,19 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void getKeyStatus(){
-        SoftKeyBoardListener.setListener(this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
-            @Override
-            public void keyBoardShow(int height) {
-                ComnToast.showMsg("显示了");
-                isShow = true;
-            }
-
-            @Override
-            public void keyBoardHide(int height) {
-                ComnToast.showMsg("隐藏了");
-                isShow = false;
-            }
-        });
+//        SoftKeyBoardListener.setListener(this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
+//            @Override
+//            public void keyBoardShow(int height) {
+//                ComnToast.showMsg("显示了");
+//                isShow = true;
+//            }
+//
+//            @Override
+//            public void keyBoardHide(int height) {
+//                ComnToast.showMsg("隐藏了");
+//                isShow = false;
+//            }
+//        });
     }
 
 }

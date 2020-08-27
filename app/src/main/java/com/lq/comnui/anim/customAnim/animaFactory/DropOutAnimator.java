@@ -6,7 +6,6 @@ import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-import com.daimajia.easing.Skill;
 import com.lq.comnui.anim.Glider;
 import com.lq.comnui.anim.customAnim.BaseAnimator;
 import com.lq.comnui.anim.customAnim.easingFactory.bounce.BounceEaseOut;

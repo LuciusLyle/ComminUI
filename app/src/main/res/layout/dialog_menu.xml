@@ -31,7 +31,6 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/dialog_ui_round_size"
         app:cardElevation="0px">
-
         <com.lq.comnui.widget.SmartTextView
             android:id="@+id/tv_menu_cancel"
             android:layout_width="match_parent"

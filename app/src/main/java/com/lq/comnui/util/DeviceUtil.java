@@ -9,8 +9,7 @@ import android.provider.Settings;
 
 import androidx.annotation.RequiresPermission;
 
-import com.blankj.utilcode.util.ShellUtils;
-import com.blankj.utilcode.util.Utils;
+
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -46,9 +45,9 @@ public class DeviceUtil {
      * @return the android id of device
      */
     @SuppressLint("HardwareIds")
-    public static String getAndroidID() {
+    public static String getAndroidID(Context context) {
         String id = Settings.Secure.getString(
-                Utils.getApp().getContentResolver(),
+                context.getContentResolver(),
                 Settings.Secure.ANDROID_ID
         );
         return id == null ? "" : id;
@@ -62,8 +61,8 @@ public class DeviceUtil {
      * @return the MAC address
      */
     @RequiresPermission(allOf = {ACCESS_WIFI_STATE, INTERNET})
-    public static String getMacAddress() {
-        return getMacAddress((String[]) null);
+    public static String getMacAddress(Context context) {
+        return getMacAddress(context,(String[]) null);
     }
 
     /**
@@ -74,7 +73,7 @@ public class DeviceUtil {
      * @return the MAC address
      */
     @RequiresPermission(allOf = {ACCESS_WIFI_STATE, INTERNET})
-    public static String getMacAddress(final String... excepts) {
+    public static String getMacAddress(Context context,final String... excepts) {
         String macAddress = getMacAddressByNetworkInterface();
         if (isAddressNotInExcepts(macAddress, excepts)) {
             return macAddress;
@@ -83,11 +82,11 @@ public class DeviceUtil {
         if (isAddressNotInExcepts(macAddress, excepts)) {
             return macAddress;
         }
-        macAddress = getMacAddressByWifiInfo();
+        macAddress = getMacAddressByWifiInfo(context);
         if (isAddressNotInExcepts(macAddress, excepts)) {
             return macAddress;
         }
-        macAddress = getMacAddressByFile();
+        macAddress = "02:00:00:00:00:00";//getMacAddressByFile();
         if (isAddressNotInExcepts(macAddress, excepts)) {
             return macAddress;
         }
@@ -198,9 +197,9 @@ public class DeviceUtil {
     }
 
     @SuppressLint({"MissingPermission", "HardwareIds"})
-    private static String getMacAddressByWifiInfo() {
+    private static String getMacAddressByWifiInfo(Context context) {
         try {
-            final WifiManager wifi = (WifiManager) Utils.getApp()
+            final WifiManager wifi = (WifiManager) context
                     .getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             if (wifi != null) {
                 final WifiInfo info = wifi.getConnectionInfo();
@@ -212,20 +211,20 @@ public class DeviceUtil {
         return "02:00:00:00:00:00";
     }
 
-    private static String getMacAddressByFile() {
-        ShellUtils.CommandResult result = ShellUtils.execCmd("getprop wifi.interface", false);
-        if (result.result == 0) {
-            String name = result.successMsg;
-            if (name != null) {
-                result = ShellUtils.execCmd("cat /sys/class/net/" + name + "/address", false);
-                if (result.result == 0) {
-                    String address = result.successMsg;
-                    if (address != null && address.length() > 0) {
-                        return address;
-                    }
-                }
-            }
-        }
-        return "02:00:00:00:00:00";
-    }
+//    private static String getMacAddressByFile() {
+//        ShellUtils.CommandResult result = ShellUtils.execCmd("getprop wifi.interface", false);
+//        if (result.result == 0) {
+//            String name = result.successMsg;
+//            if (name != null) {
+//                result = ShellUtils.execCmd("cat /sys/class/net/" + name + "/address", false);
+//                if (result.result == 0) {
+//                    String address = result.successMsg;
+//                    if (address != null && address.length() > 0) {
+//                        return address;
+//                    }
+//                }
+//            }
+//        }
+//        return "02:00:00:00:00:00";
+//    }
 }

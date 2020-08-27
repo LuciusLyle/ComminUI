@@ -78,47 +78,44 @@ public class SpliteActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.btn_Edit: //切换输入框样式
-                if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE){
-                    splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
-                }else if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT){
-                    splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
-                }else if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE){
-                    splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
-                }
-                if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE){
-                    splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
-                }else if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT){
-                    splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
-                }else if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE){
-                    splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
-                }
-                if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE){
-                    splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
-                }else if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT){
-                    splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
-                }else if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE){
-                    splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
-                }
-                break;
-            case R.id.btn_Show: //切换显示模式
-                if (splitEdit1.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
-                    splitEdit1.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
-                } else {
-                    splitEdit1.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
-                }
-                if (splitEdit2.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
-                    splitEdit2.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
-                } else {
-                    splitEdit2.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
-                }
-                if (splitEdit3.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
-                    splitEdit3.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
-                } else {
-                    splitEdit3.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
-                }
-                break;
+        if (id == R.id.btn_Edit) { //切换输入框样式
+            if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE) {
+                splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
+            } else if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT) {
+                splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
+            } else if (splitEdit1.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE) {
+                splitEdit1.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
+            }
+            if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE) {
+                splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
+            } else if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT) {
+                splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
+            } else if (splitEdit2.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE) {
+                splitEdit2.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
+            }
+            if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_SINGLE) {
+                splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_CONNECT);
+            } else if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_CONNECT) {
+                splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE);
+            } else if (splitEdit3.getInputBoxStyle() == SplitEditTextView.INPUT_BOX_STYLE_UNDERLINE) {
+                splitEdit3.setInputBoxStyle(SplitEditTextView.INPUT_BOX_STYLE_SINGLE);
+            }
+        } else if (id == R.id.btn_Show) { //切换显示模式
+            if (splitEdit1.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
+                splitEdit1.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
+            } else {
+                splitEdit1.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
+            }
+            if (splitEdit2.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
+                splitEdit2.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
+            } else {
+                splitEdit2.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
+            }
+            if (splitEdit3.getContentShowMode() == SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD) {
+                splitEdit3.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_TEXT);
+            } else {
+                splitEdit3.setContentShowMode(SplitEditTextView.CONTENT_SHOW_MODE_PASSWORD);
+            }
         }
     }
 

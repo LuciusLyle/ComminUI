@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lq.comnui.base.BaseAdapter;
 import com.lq.comnui.R;
+import com.lq.comnui.base.BaseAdapter;
 import com.lq.comnui.aop.SingleClick;
 import com.lq.comnui.base.BaseDialog;
 import com.lq.comnui.base.MyAdapter;
@@ -23,15 +23,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
- *    time   : 2019/10/09
- *    desc   : 单选或者多选对话框
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/AndroidProject
+ * time   : 2019/10/09
+ * desc   : 单选或者多选对话框
  */
 public final class SelectDialog {
 
-    public static final class Builder
-            extends UIDialog.Builder<Builder> {
+    public static final class Builder extends UIDialog.Builder<Builder> {
 
         private OnListener mListener;
 
@@ -107,39 +106,39 @@ public final class SelectDialog {
         @SuppressWarnings("all")
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_ui_confirm:
-                    HashMap<Integer, Object> data = mAdapter.getSelectSet();
-                    if (data.size() >= mAdapter.getMinSelect()) {
-                        autoDismiss();
-                        if (mListener != null) {
-                            mListener.onSelected(getDialog(), data);
-                        }
-                    } else {
-                        ComnToast.showMsg("至少要选择" + mAdapter.getMinSelect() + "项");
-                    }
-                    break;
-                case R.id.tv_ui_cancel:
+            if (v.getId() == R.id.tv_ui_confirm) {
+                HashMap<Integer, Object> data = mAdapter.getSelectSet();
+                if (data.size() >= mAdapter.getMinSelect()) {
                     autoDismiss();
                     if (mListener != null) {
-                        mListener.onCancel(getDialog());
+                        mListener.onSelected(getDialog(), data);
                     }
-                    break;
-                default:
-                    break;
+                } else {
+                    ComnToast.showMsg("至少要选择" + mAdapter.getMinSelect() + "项");
+                }
+            } else if (v.getId() == R.id.tv_ui_cancel) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onCancel(getDialog());
+                }
             }
         }
     }
 
-    private static final class SelectAdapter extends MyAdapter<Object>
-            implements BaseAdapter.OnItemClickListener {
+    private static final class SelectAdapter extends MyAdapter<Object> implements BaseAdapter.OnItemClickListener {
 
-        /** 最小选择数量 */
+        /**
+         * 最小选择数量
+         */
         private int mMinSelect = 1;
-        /** 最大选择数量 */
+        /**
+         * 最大选择数量
+         */
         private int mMaxSelect = Integer.MAX_VALUE;
 
-        /** 选择对象集合 */
+        /**
+         * 选择对象集合
+         */
         @SuppressLint("UseSparseArrays")
         private final HashMap<Integer, Object> mSelectSet = new HashMap<>();
 
@@ -242,13 +241,14 @@ public final class SelectDialog {
         /**
          * 选择回调
          *
-         * @param data              选择的位置和数据
+         * @param data 选择的位置和数据
          */
         void onSelected(BaseDialog dialog, HashMap<Integer, T> data);
 
         /**
          * 取消回调
          */
-        default void onCancel(BaseDialog dialog) {}
+        default void onCancel(BaseDialog dialog) {
+        }
     }
 }

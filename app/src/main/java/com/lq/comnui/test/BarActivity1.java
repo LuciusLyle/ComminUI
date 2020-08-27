@@ -77,86 +77,72 @@ public class BarActivity1 extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
-            case R.id.btn_bar_height:
-                StatusBarUtil.statusBarLightMode(this);
-                break;
-            case R.id.btn_bar_gone: //设置状态栏是否可见
-                if (BarUtil.isStatusBarVisible(this)){
-                    BarUtil.setStatusBarVisibility(this,false);
-                }else {
-                    BarUtil.setStatusBarVisibility(this,true);
-                }
-                break;
-            case R.id.btn_bar: //设置状态栏是否为浅色模式
-                if (BarUtil.isStatusBarLightMode(this)){
-                    BarUtil.setStatusBarLightMode(this,false);
-                }else {
-                    BarUtil.setStatusBarLightMode(this,true);
-                }
-                break;
-            case R.id.btn_bar_add: //增加状态栏高度
-                BarUtil.addMarginTopEqualStatusBarHeight(BarHeight);
-                break;
-            case R.id.btn_bar_delete: //减少状态栏高度
-                BarUtil.subtractMarginTopEqualStatusBarHeight(BarHeight);
-                break;
-            case R.id.btn_bar_color: //设置状态栏颜色
-                if (isWhite){
-                    BarUtil.setStatusBarColor(this,getResources().getColor(R.color.application_color));
-                    isWhite = false;
-                }else {
-                    BarUtil.setStatusBarColor(this,getResources().getColor(R.color.white));
-                    isWhite = true;
-                }
-                break;
-            case R.id.btn_bar_actionBar: //获取 ActionBar 高度
-                ComnToast.showMsg(BarUtil.getActionBarHeight() + "px");
-                break;
-            case R.id.btn_bar_tips: //设置通知栏是否可见
-                if (isLook){
-                    BarUtil.setNotificationBarVisibility(false);
-                    isLook = false;
-                }else {
-                    BarUtil.setNotificationBarVisibility(true);
-                    isLook = true;
-                }
-                break;
-            case R.id.btn_bar_navIs: //判断是否支持导航栏
-                if (BarUtil.isSupportNavBar()){
-                    ComnToast.showMsg("当前设备支持导航栏");
-                }else {
-                    ComnToast.showMsg("当前设备暂不支持导航栏");
-                }
-                break;
-            case R.id.btn_bar_navHeight: //获取导航栏高度
-                ComnToast.showMsg(BarUtil.getNavBarHeight() + "px");
-                break;
-            case R.id.btn_bar_navLook: //设置导航栏是否可见
-                if (BarUtil.isNavBarVisible(this)){
-                    BarUtil.setNavBarVisibility(this,false);
-                }else {
-                    BarUtil.setNavBarVisibility(this,true);
-                }
-                break;
-            case R.id.btn_bar_navColor: //获取导航栏颜色
+        if (id == R.id.btn_bar_height) {
+            StatusBarUtil.statusBarLightMode(this);
+        } else if (id == R.id.btn_bar_gone) { //设置状态栏是否可见
+            if (BarUtil.isStatusBarVisible(this)) {
+                BarUtil.setStatusBarVisibility(this, false);
+            } else {
+                BarUtil.setStatusBarVisibility(this, true);
+            }
+        } else if (id == R.id.btn_bar) { //设置状态栏是否为浅色模式
+            if (BarUtil.isStatusBarLightMode(this)) {
+                BarUtil.setStatusBarLightMode(this, false);
+            } else {
+                BarUtil.setStatusBarLightMode(this, true);
+            }
+        } else if (id == R.id.btn_bar_add) { //增加状态栏高度
+            BarUtil.addMarginTopEqualStatusBarHeight(BarHeight);
+        } else if (id == R.id.btn_bar_delete) { //减少状态栏高度
+            BarUtil.subtractMarginTopEqualStatusBarHeight(BarHeight);
+        } else if (id == R.id.btn_bar_color) { //设置状态栏颜色
+            if (isWhite) {
+                BarUtil.setStatusBarColor(this, getResources().getColor(R.color.application_color));
+                isWhite = false;
+            } else {
+                BarUtil.setStatusBarColor(this, getResources().getColor(R.color.white));
+                isWhite = true;
+            }
+        } else if (id == R.id.btn_bar_actionBar) { //获取 ActionBar 高度
+            ComnToast.showMsg(BarUtil.getActionBarHeight(this) + "px");
+        } else if (id == R.id.btn_bar_tips) { //设置通知栏是否可见
+            if (isLook) {
+                BarUtil.setNotificationBarVisibility(this, false);
+                isLook = false;
+            } else {
+                BarUtil.setNotificationBarVisibility(this, true);
+                isLook = true;
+            }
+        } else if (id == R.id.btn_bar_navIs) { //判断是否支持导航栏
+            if (BarUtil.isSupportNavBar(this)) {
+                ComnToast.showMsg("当前设备支持导航栏");
+            } else {
+                ComnToast.showMsg("当前设备暂不支持导航栏");
+            }
+        } else if (id == R.id.btn_bar_navHeight) { //获取导航栏高度
+            ComnToast.showMsg(BarUtil.getNavBarHeight() + "px");
+        } else if (id == R.id.btn_bar_navLook) { //设置导航栏是否可见
+            if (BarUtil.isNavBarVisible(this)) {
+                BarUtil.setNavBarVisibility(this, false);
+            } else {
+                BarUtil.setNavBarVisibility(this, true);
+            }
+        } else if (id == R.id.btn_bar_navColor) { //获取导航栏颜色
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ComnToast.showMsg(BarUtil.getNavBarColor(this) + "");
+            }
+        } else if (id == R.id.btn_bar_navSetColor) { //设置导航栏颜色
+            if (isColor) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ComnToast.showMsg(BarUtil.getNavBarColor(this) + "");
+                    BarUtil.setNavBarColor(this, getResources().getColor(R.color.application_color));
+                    isColor = false;
                 }
-                break;
-            case R.id.btn_bar_navSetColor: //设置导航栏颜色
-                if (isColor){
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        BarUtil.setNavBarColor(this,getResources().getColor(R.color.application_color));
-                        isColor = false;
-                    }
-                }else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        BarUtil.setNavBarColor(this,getResources().getColor(R.color.white));
-                        isColor = true;
-                    }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    BarUtil.setNavBarColor(this, getResources().getColor(R.color.white));
+                    isColor = true;
                 }
-                break;
+            }
         }
     }
 }

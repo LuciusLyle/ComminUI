@@ -82,21 +82,17 @@ public final class InputDialog {
         @SingleClick
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_ui_confirm:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onConfirm(getDialog(), mInputView.getText().toString());
-                    }
-                    break;
-                case R.id.tv_ui_cancel:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onCancel(getDialog());
-                    }
-                    break;
-                default:
-                    break;
+            int id = v.getId();
+            if (id == R.id.tv_ui_confirm) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onConfirm(getDialog(), mInputView.getText().toString());
+                }
+            } else if (id == R.id.tv_ui_cancel) {
+                autoDismiss();
+                if (mListener != null) {
+                    mListener.onCancel(getDialog());
+                }
             }
         }
     }

@@ -3,7 +3,7 @@ package com.lq.comnui.recyclerView.base;
 import androidx.collection.SparseArrayCompat;
 
 /**
- *
+ * 
  */
 public class ItemViewDelegateManager<T> {
     SparseArrayCompat<ItemViewDelegate<T>> delegates = new SparseArrayCompat();

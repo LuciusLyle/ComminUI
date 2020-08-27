@@ -8,7 +8,6 @@ package com.lq.comnui.anim;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 
-import com.daimajia.easing.Skill;
 import com.lq.comnui.anim.customAnim.AnimatorFactory;
 import com.lq.comnui.anim.customAnim.animaFactory.DropOutAnimator;
 
@@ -30,10 +29,10 @@ public class Glider {
         return animator;
     }
 
-    public static PropertyValuesHolder glide(Skill skill, float duration, PropertyValuesHolder propertyValuesHolder) {
-        propertyValuesHolder.setEvaluator(skill.getMethod(duration));
-        return propertyValuesHolder;
-    }
+//    public static PropertyValuesHolder glide(Skill skill, float duration, PropertyValuesHolder propertyValuesHolder) {
+//        propertyValuesHolder.setEvaluator(skill.getMethod(duration));
+//        return propertyValuesHolder;
+//    }
 
 
 }

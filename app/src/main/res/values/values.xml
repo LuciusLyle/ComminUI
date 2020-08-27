@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="base_fillet_normal">@dimen/dp_5</dimen>
+<!--    <dimen name="base_fillet_normal">@dimen/dp_5</dimen>-->
 
     <!-- 通用对话框圆角大小 -->
     <dimen name="dialog_ui_round_size">@dimen/dp_10</dimen>
