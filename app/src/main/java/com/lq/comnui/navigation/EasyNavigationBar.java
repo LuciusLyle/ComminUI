@@ -22,8 +22,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
+//import com.daimajia.androidanimations.library.Techniques;
+//import com.daimajia.androidanimations.library.YoYo;
 import com.lq.comnui.R;
 import com.lq.comnui.anim.customAnim.AnimatorFactory;
 import com.lq.comnui.anim.customAnim.BaseAnimator;

@@ -40,11 +40,23 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//        ViewHolder holder;
+//        if (parent.getTag() == null) {
+//            ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType);
+//            int layoutId = itemViewDelegate.getItemViewLayoutId();
+//            holder = ViewHolder.createViewHolder(mContext, parent, layoutId);
+//            onViewHolderCreated(holder, holder.getConvertView());
+//            setListener(parent, holder, viewType);
+//            parent.setTag(holder);
+//        }else {
+//            holder = (ViewHolder) parent.getTag();
+//        }
         ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType);
         int layoutId = itemViewDelegate.getItemViewLayoutId();
         ViewHolder holder = ViewHolder.createViewHolder(mContext, parent, layoutId);
         onViewHolderCreated(holder, holder.getConvertView());
         setListener(parent, holder, viewType);
+        
         return holder;
     }
 

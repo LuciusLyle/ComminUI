@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.lq.comnui.R;
-import com.lq.comnui.listener.SoftKeyBoardListener;
+//import com.lq.comnui.listener.SoftKeyBoardListener;
 import com.lq.comnui.util.ComnToast;
 
 import androidx.annotation.Nullable;
@@ -78,19 +78,19 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void getKeyStatus(){
-        SoftKeyBoardListener.setListener(this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
-            @Override
-            public void keyBoardShow(int height) {
-                ComnToast.showMsg("显示了");
-                isShow = true;
-            }
-
-            @Override
-            public void keyBoardHide(int height) {
-                ComnToast.showMsg("隐藏了");
-                isShow = false;
-            }
-        });
+//        SoftKeyBoardListener.setListener(this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
+//            @Override
+//            public void keyBoardShow(int height) {
+//                ComnToast.showMsg("显示了");
+//                isShow = true;
+//            }
+//
+//            @Override
+//            public void keyBoardHide(int height) {
+//                ComnToast.showMsg("隐藏了");
+//                isShow = false;
+//            }
+//        });
     }
 
 }

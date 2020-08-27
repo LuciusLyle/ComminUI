@@ -111,19 +111,19 @@ public class BarActivity1 extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.btn_bar_actionBar: //获取 ActionBar 高度
-                ComnToast.showMsg(BarUtil.getActionBarHeight() + "px");
+                ComnToast.showMsg(BarUtil.getActionBarHeight(this) + "px");
                 break;
             case R.id.btn_bar_tips: //设置通知栏是否可见
                 if (isLook){
-                    BarUtil.setNotificationBarVisibility(false);
+                    BarUtil.setNotificationBarVisibility(this,false);
                     isLook = false;
                 }else {
-                    BarUtil.setNotificationBarVisibility(true);
+                    BarUtil.setNotificationBarVisibility(this,true);
                     isLook = true;
                 }
                 break;
             case R.id.btn_bar_navIs: //判断是否支持导航栏
-                if (BarUtil.isSupportNavBar()){
+                if (BarUtil.isSupportNavBar(this)){
                     ComnToast.showMsg("当前设备支持导航栏");
                 }else {
                     ComnToast.showMsg("当前设备暂不支持导航栏");

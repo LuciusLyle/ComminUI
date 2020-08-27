@@ -1,4 +1,2 @@
-include ':widget'
-include ':comn'
 include ':app'
-rootProject.name = "ComnUI"
+rootProject.name = "ComminUI"
